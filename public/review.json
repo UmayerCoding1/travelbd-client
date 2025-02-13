@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "author_name": "Arif Rahman",
+    "date": "2025-01-15",
+    "content": "The trip was amazing! Everything was well-organized, and the tour guide was very knowledgeable. Highly recommend!",
+    "image": "https://shorturl.at/SIEzV",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "author_name": "Nusrat Jahan",
+    "date": "2025-01-12",
+    "content": "Absolutely loved the experience! The destinations were breathtaking, and the service was top-notch.",
+    "image": "https://i.postimg.cc/Kv7znZW0/7d5b6a-c6a0de238dd94afc99796bb3073f78b1-mv2.webp",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "author_name": "Tanvir Ahmed",
+    "date": "2025-01-10",
+    "content": "Excellent trip! Everything went smoothly, and the team was super helpful. Would definitely book again.",
+    "image": "https://i.postimg.cc/2yc0JpcM/ert.webp",
+    "rating": 5
+  }
+]

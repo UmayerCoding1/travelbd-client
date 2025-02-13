@@ -1,0 +1,11 @@
+.banner-bgImage{
+    background-image: url('../../../../assets/image/banner/banner-bg.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: text;
+   color: transparent;
+}
+.sub-title-text{
+    font-family: "Alex Brush", serif;
+    font-weight: bold;
+}
