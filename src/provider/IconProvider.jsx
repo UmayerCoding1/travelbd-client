@@ -21,6 +21,8 @@ import { IoOptions } from "react-icons/io5";
 import { FaMessage } from "react-icons/fa6";
 import { IoIosInformationCircle } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
+import { IoMdArrowDropup } from "react-icons/io";
+import { GoChevronLeft } from "react-icons/go"
 
 export {
     LuMoveRight as RightArrowIcon,
@@ -35,6 +37,7 @@ export {
     FaEdit as EditIcon,
     IoMdSettings as SettingsIcon,
     IoMdArrowDropdown as DownIcon,
+    IoMdArrowDropup as UpIcon,
     FaXmark as CloseIcon,
     IoKeySharp as KeyIcon,
     FaRegCheckCircle as SelectIcon,
@@ -45,5 +48,6 @@ export {
     FaMessage as MessageIcon,
     IoIosInformationCircle as InfoIcon,
     RiMenu3Fill as MenuIcon,
+    GoChevronLeft as LeftIcon
     
 }

@@ -6,6 +6,7 @@ import SignUp from "../components/pages/sign-up/SignUp";
 import Profile from "../components/pages/user/profile/Profile";
 import PrivetRoute from "./PrivetRoute";
 import DestinationDetails from "../components/shared/destinatinDetails/DestinationDetails";
+import Destinations from "../components/pages/destinatons/destinations";
 
 const render = createBrowserRouter([
     {
@@ -19,7 +20,8 @@ const render = createBrowserRouter([
             },
 
             {
-                path: '/destinations'
+                path: '/destinations',
+                element:<Destinations/>
             },
             {
                 path:'/destination/:id',

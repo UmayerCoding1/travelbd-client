@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import UsePublicApiEndpoint from './usePublicApiEndpoint';
 
-const useDestinations = () => {
+const useDestinations = (filterValue) => {
     const publicApiEndPoint = UsePublicApiEndpoint();
     const {data: destinations = []} = useQuery({
         queryKey: ['destinations'],

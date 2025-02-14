@@ -1,0 +1,482 @@
+[
+  {
+    "hotelName": "Royal Pearl Suites",
+    "hotelType":"Hotel",
+    "location": "Royal Pearl Suites, Cox's Bazar Light House, Cox's Bazar, Kolatoli, Cox's Bazar, Bangladesh",
+    "star": 3,
+    "nearby": [
+      "1.2 km from Laboni Point Sea Beach",
+      "1.6 km from Sugondha Sea Beach",
+      "2.6 km from Cox's Bazar Airport",
+      "2.3 km from Kolatoli Bus Stand"
+    ],
+    "couple": true,
+    "amenities": [
+      "Air Conditioning",
+      "Check-In Check-Out",
+      "Accessible Bathroom",
+      "Elevator",
+      "Highchairs"
+    ],
+    "hotelImage": [
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-MELRQ70MQgWhatsApp%20Image%202024-12-13%20at%2019.23.15_f4880019.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-58pJsuPWvClarge-lmghtg7647Royal%20Pearl%20Full.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-ebwFBYrg0l1.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-XtcfQrYnIG3.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-zTuCvfqxa35.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-E5ITz3wcGO7.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-vAIJeBvACh1.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-YN6KJPlcVs4.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-G5qifLa9zQ1.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-gspBEb4HEK2.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-InLdl6MX0i2.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-gJ854gp6bA3.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-z78jNUPr6a4.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-pV7iuOVysr5.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-4YtLuGCK6l6.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-jxaVBblpCu7.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-S7K9r8j4xS8.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-KvatrWaKheSwimming%20Pool.jpg"
+    ],
+    "rooms": [
+       {
+        "title":"Superior Suite",
+        "people":{
+          "adults":2,
+          "children":1
+        },
+        "catering":{
+          "morning": true,
+          "lunch": false,
+          "dinner": false
+        },
+        "bad":"Double",
+        "RoomCapacity":3,
+        "available":7,
+        "roomType":"Double",
+        "roomCharacteristics":"Deluxe",
+        "roomView":"City",
+        "facilities":[
+          {
+            "category":"Bedroom Facilities",
+            "item":[
+              "Air Conditioning",
+              "Fan",
+              "In-Room Safe",
+              "Blankets",
+              "Carpeted floors",
+              "Closet",
+              "Curtain",
+              "Extra Bedding",
+              "Sofa Bed"
+            ]
+          },
+          {
+            "category":"Media & Technology",
+            "item":[
+              "Cable TV",
+              "Telephone",
+              "TV",
+              "Wi-Fi"
+            ]
+          },
+          {
+            "category":"Food & Drink",
+            "item":[
+              "Coffee/Tea Maker",
+              "Free Bottled Water",
+              "Mini Fridge"
+            ]
+          },
+          {
+            "category":"Bathroom Facilities",
+            "item":[
+              "Towels",
+              "Toiletries",
+              "Hot Water",
+              "Hairdryer",
+              "Bathroom"
+            ]
+          },
+          {
+            "category":"Others",
+            "item":[
+              "220V Socket",
+              "Desk",
+              "Disability-friendly Bathroom",
+              "Housekeeping",
+              "Linens",
+              "Non-Smoking",
+              "Living Room",
+              "Room Service",
+              "Safe",
+              "Slippers",
+              "Smart Lock",
+              "Smoke detector",
+              "Sofa",
+              "Soundproof",
+              "Swimming Pool",
+              "Wheelchair Friendly"
+            ]
+          }
+        ],
+        "roomImage":[
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-4TmamalyDlSuperior%20Deluxe%20Suite.jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-SIMbINIMqLSuperior%20Deluxe%20Suite%20Leaving%20Room.jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-lIg4IjCmdxSuporior%20Deluxe.png"
+        ],
+        "price":9487,
+        "discount":62,
+        "texes":942,
+        "duration":"1 Night"
+       },
+       {
+        "title":"Elite Suite",
+        "people":{
+          "adults":4,
+          "children":2
+        },
+        "catering":{
+          "morning": true,
+          "lunch": false,
+          "dinner": false
+        },
+        "bad":"Double",
+        "RoomCapacity":5,
+        "available":1,
+        "roomType":" Suite",
+        "roomCharacteristics":"None",
+        "roomView":"Hill",
+        "facilities":[
+          {
+            "category":"Bedroom Facilities",
+            "item":[
+              "Air Conditioning",
+              "Fan",
+              "In-Room Safe",
+              "Blankets",
+              "Carpeted floors",
+              "Closet",
+              "Curtain",
+              "Extra Bedding",
+              "Sofa Bed"
+            ]
+          },
+          {
+            "category":"Media & Technology",
+            "item":[
+              "Cable TV",
+              "Telephone",
+              "TV",
+              "Wi-Fi"
+            ]
+          },
+          {
+            "category":"Food & Drink",
+            "item":[
+              "Coffee/Tea Maker",
+              "Free Bottled Water",
+              "Mini Fridge"
+            ]
+          },
+          {
+            "category":"Bathroom Facilities",
+            "item":[
+              "Towels",
+              "Toiletries",
+              "Hot Water",
+              "Hairdryer",
+              "Bathroom"
+            ]
+          },
+          {
+            "category":"Others",
+            "item":[
+              "220V Socket",
+              "Desk",
+              "Disability-friendly Bathroom",
+              "Housekeeping",
+              "Linens",
+              "Non-Smoking",
+              "Living Room",
+              "Room Service",
+              "Safe",
+              "Slippers",
+              "Smart Lock",
+              "Smoke detector",
+              "Sofa",
+              "Soundproof",
+              "Swimming Pool",
+              "Wheelchair Friendly"
+            ]
+          }
+        ],
+        "roomImage":[
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-AxxHTK4DM5Elite%20Suite%202%20(1).jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-SBYPfla2Solarge-hWcstdo2rRElite%20Suite%201%20(1).jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-cnYknl47yflarge-irQhQUgDj1ELIT%20(1).jpeg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-1w7G5VTQuUlarge-kxZq5GY10aELIT%20(5).jpeg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-BBfUzofMz5large-U3IqeQ467yElite%20Suite%20Mini%20Kitchen%20(1).jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-sfc5vX05Yblarge-cVrSmxQhN4ELIT%20(15).jpeg"
+        ],
+        "price": 23716,
+        "discount":46,
+        "texes":3351,
+        "duration":"1 Night"
+       }
+    ]
+  },
+  {
+    "hotelName": "CCULB Resort & Convention Hall",
+    "hotelType":"Resort",
+    "location": "Ulokhola (Jora Pump), Near Purbachal, Kaligonj, Gazipur, Bangladesh",
+    "star": 4,
+    "nearby": [
+      "0.85 km from Mothbari Bazar",
+      "0.8 km from St. Augustine Catholic Church",
+      "15 km from Hazrat Shahjalal International Airport",
+      "1 km from Bagan Bilash Bus Stop"
+    ],
+    "couple": true,
+    "amenities": [
+      "Air Conditioning",
+      "Check-In Check-Out",
+      "Accessible Bathroom",
+      "Elevator",
+      "Highchairs"
+    ],
+    "hotelImage": [
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-XI05JcycrcDJI_0725.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-GSy9yXXz4JDJI_0727.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-87FuqOU0W2outside_01.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-BaywRF7Shv_TOY8623.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-VmRFqWWMlgDJI_0631.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-LEOXOqcY8mDJI_0639.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-VxFs9ocSduDJI_0642.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-hmEYHFHVBRDJI_0658.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-7mxusQB3joDJI_0662.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-JCEkedunImDJI_0666.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-58vaquQ4JkDJI_0691.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-rqU2oIM7vwDSC_0132.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-AeZ4Xu599p_TOY8727.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-69u8MfjhiY_TOY8677.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-v3rB0iMqADDSC_0160.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-P1vODm9BlzDSC_0162.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-pzKcdHX8VRDSC_0125.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-FVmAswlVApDSC_0127.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-JvlxP5jaaMDSC_0147.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-63KC03tqne_TOY8732.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-CoRlhmnb83_TOY8770.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-kqUjXUWVU7_TOY8729.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-HGQyDce5eiDSC_0139.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-AIHVYv871iWhatsApp%20Image%202024-03-20%20at%2012.06.36%20PM%20(1).jpeg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-4lIaDEXNBU308786738_561559289190795_2642537583088951766_n.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-uxE4umQ9S8271845677_464081565113983_7375310201644933314_n.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-CWJhQZfE5d271892915_464081485113991_3433539428781797533_n.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-qpLVKkbdiy272051378_464081455113994_1556325084409733722_n.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-x0Kbj8V32F291921991_573100067545465_4293990006819495736_n.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-krdWPQY2Bb_TOY8705.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-iYH6br8XNJDSC_0152.JPG",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-bmmH05t4uY_TOY8696.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-BStKaQMdBL_TOY8622.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-NRkpb7fSxyDJI_0682.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-BNRQjHxyLZ2022-01-15.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-fs1lQngG8C_TOY8709.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-IiOzJ1xKmD_TOY8715.jpg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-mMaDZEebAEWhatsApp%20Image%202024-12-30%20at%209.58.27%20PM.jpeg",
+      "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-KvABfeQ0g7DJI_0721.jpg"
+    ],
+    "rooms": [
+       {
+        "title":"Super Deluxe - Couple",
+        "people":{
+          "adults":2,
+          "children":null
+        },
+        "catering":{
+          "morning": true,
+          "lunch": false,
+          "dinner": false
+        },
+        "bad":"King",
+        "RoomCapacity":3,
+        "available":2,
+        "roomType":"Double",
+        "roomCharacteristics":"Deluxe",
+        "roomView":"City",
+        "facilities":[
+          {
+            "category":"Bedroom Facilities",
+            "item":[
+              "Air Conditioning",
+              "Fan",
+              "In-Room Safe",
+              "Blankets",
+              "Carpeted floors",
+              "Closet",
+              "Curtain",
+              "Extra Bedding",
+              "Sofa Bed"
+            ]
+          },
+          {
+            "category":"Media & Technology",
+            "item":[
+              "Cable TV",
+              "Telephone",
+              "TV",
+              "Wi-Fi"
+            ]
+          },
+          {
+            "category":"Food & Drink",
+            "item":[
+              "Coffee/Tea Maker",
+              "Free Bottled Water",
+              "Mini Fridge"
+            ]
+          },
+          {
+            "category":"Bathroom Facilities",
+            "item":[
+              "Towels",
+              "Toiletries",
+              "Hot Water",
+              "Hairdryer",
+              "Bathroom"
+            ]
+          },
+          {
+            "category":"Others",
+            "item":[
+              "220V Socket",
+              "Desk",
+              "Disability-friendly Bathroom",
+              "Housekeeping",
+              "Linens",
+              "Non-Smoking",
+              "Living Room",
+              "Room Service",
+              "Safe",
+              "Slippers",
+              "Smart Lock",
+              "Smoke detector",
+              "Sofa",
+              "Soundproof",
+              "Swimming Pool",
+              "Wheelchair Friendly"
+            ]
+          }
+        ],
+        "roomImage":[
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-voJzsABJey391A4175.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-g21wjTSYLp391A4174.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-LxRWaxDxun391A4181.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-tY7kPq3V3O391A4682.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-ZHMxC8aV9S391A4754.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-WOQPEn4lGLDSC_0058.JPG"
+        ],
+        "price":9882,
+        "discount":47,
+        "texes":1361,
+        "duration":"1 Night"
+       },
+       {
+        "title":"Premium Deluxe",
+        "people":{
+          "adults":4,
+          "children":null
+        },
+        "catering":{
+          "morning": true,
+          "lunch": false,
+          "dinner": false
+        },
+        "bad":"King",
+        "RoomCapacity":3,
+        "available":2,
+        "roomType":" Double",
+        "roomCharacteristics":"Premium",
+        "roomView":"Garden ",
+        "facilities":[
+          {
+            "category":"Bedroom Facilities",
+            "item":[
+              "Air Conditioning",
+              "Fan",
+              "In-Room Safe",
+              "Blankets",
+              "Carpeted floors",
+              "Closet",
+              "Curtain",
+              "Extra Bedding",
+              "Sofa Bed"
+            ]
+          },
+          {
+            "category":"Media & Technology",
+            "item":[
+              "Cable TV",
+              "Telephone",
+              "TV",
+              "Wi-Fi"
+            ]
+          },
+          {
+            "category":"Food & Drink",
+            "item":[
+              "Coffee/Tea Maker",
+              "Free Bottled Water",
+              "Mini Fridge"
+            ]
+          },
+          {
+            "category":"Bathroom Facilities",
+            "item":[
+              "Towels",
+              "Toiletries",
+              "Hot Water",
+              "Hairdryer",
+              "Bathroom"
+            ]
+          },
+          {
+            "category":"Others",
+            "item":[
+              "220V Socket",
+              "Desk",
+              "Disability-friendly Bathroom",
+              "Housekeeping",
+              "Linens",
+              "Non-Smoking",
+              "Living Room",
+              "Room Service",
+              "Safe",
+              "Slippers",
+              "Smart Lock",
+              "Smoke detector",
+              "Sofa",
+              "Soundproof",
+              "Swimming Pool",
+              "Wheelchair Friendly"
+            ]
+          }
+        ],
+        "roomImage":[
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-CDSBlJMnIh_TOY8602.jpg",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-8IzqmFsbIH391A4605.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-lqDNFi0RIQ391A4618.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-skYRY4pm4h391A4670.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-nGMiIzp1YJ391A4654.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-n5XxaFPRXZ391A4625.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-5bsnBg747c391A4754.JPG",
+          "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-OpOuuz8hDpDSC_0058.JPG"
+        ],
+        "price": 10672,
+        "discount":51,
+        "texes":1361,
+        "duration":"1 Night"
+       }
+    ]
+  }
+]

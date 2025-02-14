@@ -38,13 +38,15 @@ const Navbar = () => {
     document.addEventListener("click", handleOutsideClick);
 
     if (showNav) document.body.style.overflow = 'hidden';
-    else console.log('ok');
+    else document.body.style.overflow = 'auto';
     return () => {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [showNav]);
+
+  console.log('show nav',showNav);
   return (
-    <header>
+    <header className='mb-2 shadow-lg p-2'>
       {/* dectop */}
       <nav className='hidden lg:flex items-center justify-between '>
         <Link to={'/'}> <img className='w-40' src={logo} alt="" /></Link>
@@ -101,11 +103,16 @@ const Navbar = () => {
 
 
         {showNav && <div onClick={() => setShowNav(false)} className='w-full h-screen bg-[#00000032] absolute z-10 left-0 top-0'>
-          <div onClick={(e) => e.stopPropagation()} className='w-1/2 h-screen bg-white relative'>
+          <div onClick={(e) => e.stopPropagation()} className='w-1/2 h-screen bg-white relative px-2'>
             <button onClick={() => setShowNav(false)}><HiOutlineXMark className='text-3xl absolute top-1 right-3' /></button>
 
             <ul className=''>
               {navLink}
+              {user ? <Logout style={'flex items-center gap-2 text-xs font-semibold  p-3 rounded-lg hover:bg-red-50 text-red-500'} /> 
+              : <Link to={'/sign-in'}>
+              <button className='flex items-center justify-center mt-2 bg-[#F0721D] w-20 h-8 rounded-lg text-xs text-white transition-all ease-linear duration-200 overflow-hidden hover:text-[13px] hover:font-bold'>Sign In <RightArrowIcon /></button>
+            </Link> 
+            }
             </ul>
           </div>
         </div>}

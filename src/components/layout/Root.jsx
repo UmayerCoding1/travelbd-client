@@ -12,13 +12,14 @@ const Root = () => {
     console.log(skeletonLoading);
     
     return (
-        <div className='max-w-6xl mx-auto mt-2 p-2 lg:p-0 '>
+        <div >
            {skeletonLoading ? <ReloadAnimation/> 
             : 
             <>
             <Navbar/>
-            
+            <div className='max-w-6xl mx-auto mt-2 p-2 lg:p-0 '>
                 <Outlet/>
+            </div>
                 <Footer/>
             </>
             
