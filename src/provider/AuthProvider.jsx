@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
   const loginUser = (loginData) => {
     setLoading(true);
-    return publicApiEndpoint.post('/login', loginData)
+    return secureApiEndPoint.post('/login', loginData)
   }
 
   const logoutUser = async () => {

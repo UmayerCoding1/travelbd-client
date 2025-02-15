@@ -1,40 +1,53 @@
-import React from 'react';
-import person from '../../../../assets/image/banner/person.png'
-import './banner.css';
+import React, { useState } from 'react';
+import bannerBg from './../../../../assets/image/banner/banner-bg2.jpg'
+import { GoDash } from "react-icons/go";
+import { FaPlus } from "react-icons/fa6";
+
+import SearchOption from '../searchOption/SearchOption';
 const BannerA = () => {
+    const [searchOption, setSearchOption] = useState('tour');
+    console.log(searchOption);
     return (
-        <div className=' w-full h-[50vh] lg:h-[100vh] flex items-center justify-center relative '>
-            <h1 className='uppercase font-bold lg:text-[230px] text-gray-300 tracking-[50px] '>TBD</h1>
+        <div className='w-full h-[70vh] lg:h-[80vh]  relative'>
+            <img className='w-full h-full' src={bannerBg} alt="" />
+            <div className='w-full h-full bg-[#00000086]  absolute top-0 left-0 flex flex-col lg:flex-row  gap-2 lg:p-2'>
 
-            <div className='w-full h-full  absolute '>
-                <div className=' w-full h-full'>
-                    <div className='banner-bgImage w-full h-full flex items-center justify-center'>
-                        <h2 className='text-[110px] lg:text-[250px] font-extrabold leading-tight'>TRAVEL</h2>
-                    </div>
+                <div className='w-full lg:w-1/2 order-1 lg:order-2 flex items-center justify-center'>
+                    <div className='bg-white text rounded-lg w-96 transform duration-300 ease-linear '>
+                        <div onClick={() => setSearchOption(searchOption === 'tour' ? '' : 'tour')} className='w-full bg-primaryBgColor text-white flex gap-5 p-2 rounded-t-lg cursor-pointer'>
+                            <button>{searchOption === 'tour' ? <GoDash /> : <FaPlus />}</button>
+                            <p className='font-medium'>Tour</p>
+                        </div>
 
-                    <img className='absolute top-0 lg:left-[28%] w-[550px]' src={person} alt="" />
-                    <h2 className='sub-title-text text-[50px] lg:text-[100px] absolute lg:left-[20%] bottom-0 text-orange-500'>Know Before You GO</h2>
-                   
-                    <div className="absolute  animate-bounce left-[40%] lg:left-[50%] bottom-[-70px] lg:bottom-[-10px] flex flex-col items-center ">
-                        <svg
-                            className="w-8 h-8 text-orange-500"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                        >
-                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                        <span className='text-xs text-orange-500'>scroll Down</span>
+                        {searchOption === 'tour' && <div>
+                            <SearchOption searchOptionValue={'tour'} />
+                        </div>}
+                        <div onClick={(e) => {
+                            setSearchOption(searchOption === 'hotel' ? '' : 'hotel')
+                        }} className='w-full bg-primaryBgColor text-white flex gap-5 p-2 rounded-b-lg cursor-pointer'>
+                            <button >{searchOption === 'hotel' ? <GoDash /> : <FaPlus />}</button>
+                            <p className='font-medium'>Hotel</p>
+                        </div>
+
+                        {searchOption === 'hotel' && <div>
+                            <SearchOption searchOptionValue={'hotel'} />
+                        </div>}
                     </div>
                 </div>
+
+
+                <div className='w-full lg:w-1/2 flex flex-col justify-center gap-4 order-2 lg:order-1'>
+                    <h2 className='bg-primaryColor p-2 w-60 rounded-xl text-2xl font-AlexBrush text-white'>Know Before You GO</h2>
+                    <p className='text-2xl lg:text-4xl font-medium p-2 leading-tight bg-white text-primaryColor rounded-lg'>Explore the Beauty of Bangladesh with <span class="text-[#0B7019] font-semibold">TRAVEL</span>
+                        <span class="text-red-500 font-s font-semibold">BD</span>
+                        <span class="text-xs text-black font-semibold">.com</span></p>
+
+                    <p className='text-xs leading-relaxed text-white'>
+                        "Explore Bangladesh’s stunning landscapes, rich culture, and hidden treasures. From serene beaches to lush greenery, TRAVELBD.com offers curated experiences for unforgettable journeys. Plan your perfect adventure today!"
+                    </p>
+                </div>
+
             </div>
-
-            
-
-
         </div>
     );
 };

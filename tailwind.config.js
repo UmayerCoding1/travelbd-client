@@ -10,9 +10,10 @@ export default {
         AlexBrush: "'Alex Brush', cursive",
         Inconsolata: "'Inconsolata', monospace"
       },
-      backgroundImage: {
-        searchBanner:"url('./src/assets/image/banner/search-banner.jpg')"
+      colors: {
+        primaryColor: '#0085C9'
       },
+      
       boxShadow: {
         primaryShadow: "1px 1px 20px #63626294"
       },

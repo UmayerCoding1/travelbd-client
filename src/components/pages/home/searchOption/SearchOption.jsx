@@ -5,9 +5,9 @@ import { LocationIcon, SearchIcon } from '../../../../provider/IconProvider';
 import DateRangeCalender from '../../../shared/date-range/DateRange';
 import searchBanner from '../../../../assets/image/banner/search-banner.jpg';
 import useTourLocation from '../../../../hooks/useTourLocation';
-const SearchOption = () => {
+const SearchOption = ({searchOptionValue}) => {
   const [visible, setVisible] = useState(null);
-  const [searchOption, setSearchOption] = useState('tour');
+  
   const [showTourSearchBar, setShowTourSearchBar] = useState(false);
   const [showHotelSearchBar, setShowHotelSearchBar] = useState(false);
   const [showHotelBookingDate, setShowHotelBookingDate] = useState(false);
@@ -98,27 +98,19 @@ const SearchOption = () => {
       navigator.geolocation.clearWatch(watchId);
       document.removeEventListener('click', handleOutSiteClick)
     }
-  }, [searchOption])
+  }, [searchOptionValue])
 
 
- 
+
 
 
   return (
-    <div style={{ backgroundImage: `url(${searchBanner})` }} className="flex flex-col items-center justify-center w-full lg:h-[70vh] bg-center bg-cover rounded-2xl lg:py-20 lg:px-8 mb-10 mt-10">
+    <div className=" ">
 
-      <div className='w-full bg-white flex flex-col items-center justify-center rounded-lg p-3'>
-        <div className="flex items-center gap-3 mt-8 mb-2" >
-          <div className="flex items-center">
-            <FormControlLabel control={<Checkbox checked={searchOption === 'tour'} onChange={(e) => setSearchOption(e.target.value)} value={'tour'} />} label="Tour" />
-          </div>
+      <div className='w-full bg-white  rounded-lg '>
 
-          <div className="flex items-center">
-            <FormControlLabel control={<Checkbox checked={searchOption === 'hotel'} onChange={(e) => setSearchOption(e.target.value)} value={'hotel'} />} label="Hotel" />
-          </div>
-        </div>
 
-        {searchOption === 'hotel' &&
+        {searchOptionValue === 'hotel' &&
 
           <section className='w-full  p-4 '>
             {/* desktop layout */}
@@ -256,7 +248,7 @@ const SearchOption = () => {
         }
 
 
-        {searchOption === 'tour' &&
+        {searchOptionValue === 'tour' &&
           <section className='w-full'>
 
             <div onClick={(e) => {
@@ -313,6 +305,7 @@ const SearchOption = () => {
             </div>
           </section>
         }
+
       </div>
     </div>
   );

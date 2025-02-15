@@ -15,11 +15,14 @@ const Home = () => {
     return (
         <div>
                 <Banner />
-                <SearchOption />
+                {/* <SearchOption /> */}
+                <div className='max-w-6xl mx-auto mt-2 p-2 lg:p-0 '>
+
                 <Destination />
                 <About />
                 <Service />
                 <Review />
+                </div>
         </div>
     );
 };

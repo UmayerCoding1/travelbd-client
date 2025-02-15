@@ -5,11 +5,11 @@ import { Rating } from '@mui/material';
 import { Link } from 'react-router';
 const Card = ({please}) => {
     const {image,location,title,rating,Price,_id} = please;
-    
+   
     
     return (
         <div className="max-w-xs h-auto shadow-xl p-4 my-4 lg:my-0">
-         <ImageSlider image={image} rating={rating} imageTitle={title} style={'w-full h-52 lg:h-52 relative'}/>
+         <ImageSlider image={image} rating={rating} imageTitle={title} style={'w-full h-48 lg:h-52 relative'}/>
    <div>
       <div className='flex items-center justify-between'>
       
@@ -27,13 +27,13 @@ const Card = ({please}) => {
       </div>
       <button className='flex items-center text-xs'><LocationIcon className="text-orange-500 " /> {location}</button>
 
-      <div className="flex items-center justify-between gap-4 ">
+      <div className="lg:flex items-center justify-between gap-4 ">
          <p className="text-sm font-medium flex items-center">
             <span className="text-orange-500">৳{Price}</span><span className='text-xs'>_per person</span>
          </p>
 
          <Link to={`/destination/${_id}`}>
-         <button className="w-20 h-8 border-[1.5px] border-black rounded-lg text-xs hover:bg-primaryBgColor hover:text-white hover:border-none transition-all ease-linear duration-300">
+         <button className=" w-full lg:w-20 h-8 border-[1.5px] mt-2 lg:mt-0 border-black rounded-lg text-xs hover:bg-primaryBgColor hover:text-white hover:border-none transition-all ease-linear duration-300">
             View 
          </button>
          </Link>

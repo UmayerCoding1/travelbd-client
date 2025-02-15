@@ -46,9 +46,9 @@ const Navbar = () => {
 
   console.log('show nav',showNav);
   return (
-    <header className='mb-2 shadow-lg p-2'>
+    <header className='mb-2 shadow-lg p-2 '>
       {/* dectop */}
-      <nav className='hidden lg:flex items-center justify-between '>
+      <nav className='hidden lg:flex items-center justify-between lg:px-3'>
         <Link to={'/'}> <img className='w-40' src={logo} alt="" /></Link>
 
         <ul className='flex'>

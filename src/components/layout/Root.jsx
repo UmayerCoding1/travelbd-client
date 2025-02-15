@@ -17,7 +17,7 @@ const Root = () => {
             : 
             <>
             <Navbar/>
-            <div className='max-w-6xl mx-auto mt-2 p-2 lg:p-0 '>
+            <div>
                 <Outlet/>
             </div>
                 <Footer/>

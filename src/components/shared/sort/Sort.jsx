@@ -25,7 +25,7 @@ const Sort = ({ sortSectionRef, setShowSortDropDown, showSortDropdown }) => {
         </div>
 
 
-        {showSortDropdown && <div ref={sortSectionRef} className='w-full p-2 bg-white shadow-lg absolute left-0 top-[45px] rounded-lg'>
+        {showSortDropdown && <div ref={sortSectionRef} className='w-full p-2 bg-white shadow-lg absolute z-10 left-0 top-[45px] rounded-lg'>
           {sortValues.map(item => <p key={item}
             onClick={(e) => {
               e.stopPropagation();

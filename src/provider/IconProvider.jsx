@@ -23,6 +23,7 @@ import { IoIosInformationCircle } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoMdArrowDropup } from "react-icons/io";
 import { GoChevronLeft } from "react-icons/go"
+import { IoIosStar } from "react-icons/io";
 
 export {
     LuMoveRight as RightArrowIcon,
@@ -48,6 +49,7 @@ export {
     FaMessage as MessageIcon,
     IoIosInformationCircle as InfoIcon,
     RiMenu3Fill as MenuIcon,
-    GoChevronLeft as LeftIcon
+    GoChevronLeft as LeftIcon,
+    IoIosStar as StarIcon
     
 }

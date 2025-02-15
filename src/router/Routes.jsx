@@ -7,6 +7,7 @@ import Profile from "../components/pages/user/profile/Profile";
 import PrivetRoute from "./PrivetRoute";
 import DestinationDetails from "../components/shared/destinatinDetails/DestinationDetails";
 import Destinations from "../components/pages/destinatons/destinations";
+import Hotels from "../components/pages/hotels/Hotels";
 
 const render = createBrowserRouter([
     {
@@ -29,7 +30,8 @@ const render = createBrowserRouter([
                 loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_LOCAL}/destination/${params.id}`)
             },
             {
-                path:'/hotel'
+                path:'/hotel',
+                element: <Hotels/>
             },
             {
                 path:'/hotel:id'
