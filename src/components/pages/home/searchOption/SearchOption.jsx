@@ -1,16 +1,15 @@
-import { Checkbox, FormControlLabel } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { LocationIcon, SearchIcon } from '../../../../provider/IconProvider';
+import { LocationIcon, MinusIcon, PlusIcon, SearchIcon } from '../../../../provider/IconProvider';
 import DateRangeCalender from '../../../shared/date-range/DateRange';
-import searchBanner from '../../../../assets/image/banner/search-banner.jpg';
 import useTourLocation from '../../../../hooks/useTourLocation';
-const SearchOption = ({searchOptionValue}) => {
+
+const SearchOption = ({ searchOptionValue,style }) => {
   const [visible, setVisible] = useState(null);
-  
+
   const [showTourSearchBar, setShowTourSearchBar] = useState(false);
   const [showHotelSearchBar, setShowHotelSearchBar] = useState(false);
   const [showHotelBookingDate, setShowHotelBookingDate] = useState(false);
+  const [showBookingCount,setShowBookingCount] = useState(false);
   const [location] = useTourLocation();
   const [searchLocation, setSearchLocation] = useState('');
   const [searchHotel, setSearchHotel] = useState('');
@@ -18,9 +17,20 @@ const SearchOption = ({searchOptionValue}) => {
   const [selectHotelLocation, setSelectHotelLocation] = useState('');
   const [selectBookingDate, setSelectBookingDate] = useState({});
   const [locations, setLocations] = useState([]);
+
+  // room and guest information
+  const [roomsCount, setRoomsCount] = useState(1);
+  const [adultsCount, setAdultsCount] = useState(2);
+  const [childrenCount, setChildrenCount] = useState(0);
+  const [bookingCounter, setBookingCounter] = useState({
+    rooms: 1,
+    adults: 2,
+    children: 0
+  })
   const tourLocationListRef = useRef(null);
   const hotelLocationListRef = useRef(null);
   const bookingRef = useRef(null);
+  const bookingCounterRef = useRef(null);
   const { startDate, endDate } = selectBookingDate;
   const startDateFormat = new Intl.DateTimeFormat('en-US', {
     weekday: 'long',
@@ -34,6 +44,7 @@ const SearchOption = ({searchOptionValue}) => {
     day: '2-digit',
     year: 'numeric'
   }).format(endDate || new Date());
+
 
 
   const filterLocation = locations.filter(location => location.title.toLowerCase().includes(searchLocation.toLowerCase() || searchHotel.toLowerCase()));
@@ -56,6 +67,29 @@ const SearchOption = ({searchOptionValue}) => {
       console.log('Failed to fetch location name.');
     }
   };
+
+  const handleIncriment = (setState, stateValue) => {
+    if (stateValue < 4) {
+      setState(stateValue => stateValue + 1);
+    }
+  }
+
+  const handleDecrement = (setState, stateValue) => {
+    if (stateValue > 0) {
+      setState(stateValue => stateValue - 1);
+    }
+  }
+
+  const handleSunmitBookingCounter = () => {
+    const updatedBookingCounter = {
+      ...bookingCounter,  // Preserve existing values
+      rooms: roomsCount,
+      adults: adultsCount,
+      children: childrenCount,
+    };
+
+    setBookingCounter(updatedBookingCounter)
+  }
 
 
 
@@ -81,9 +115,10 @@ const SearchOption = ({searchOptionValue}) => {
         setShowHotelSearchBar(false);
       }
       if (bookingRef.current && !bookingRef.current.contains(e.target)) {
-
-
         setShowHotelBookingDate(false);
+      }
+      if (bookingCounterRef.current && !bookingCounterRef.current.contains(e.target)) {
+        setShowBookingCount(false);
       }
     }
 
@@ -112,24 +147,24 @@ const SearchOption = ({searchOptionValue}) => {
 
         {searchOptionValue === 'hotel' &&
 
-          <section className='w-full  p-4 '>
+          <section className='w-full  p-4 border-b-4 border-b-primaryColor'>
             {/* desktop layout */}
             <section className=''>
-              <div className="lg:grid grid-cols-2 lg:grid-cols-3 gap-2   pt-0 pl-0 w-full  ">
+              <div className={` flex ${!style && 'flex-col'}  items-center justify-between gap-2  pt-0 pl-0 w-full  `}>
 
                 <div onClick={(e) => {
                   e.stopPropagation();
                   setShowHotelSearchBar(!showHotelSearchBar)
                 }} className="border border-gray-300 outline-none w-full   h-[65px] rounded-l-xl flex p- gap-2 cursor-pointer relative">
                   <div className="flex items-center">
-                    <button className="text-[#F0721D]">
-                      <LocationIcon />
+                    <button className=" text-gray-500 ml-1">
+                      <SearchIcon />
                     </button>
                   </div>
 
                   <div className="flex  flex-col justify-center ">
-                    <p className="text-xs text-gray-500 uppercase">City/Hotel/Resort/Area</p>
-                    <h3 className="text-[15px] font-bold">{selectHotelLocation ? selectHotelLocation : 'Your location'}</h3>
+                    <p className="text-xs text-gray-500 uppercase">City/Area</p>
+                    <h3 className="text-[15px] font-bold text-gray-600">{selectHotelLocation ? selectHotelLocation : 'Hotel location'}</h3>
                   </div>
 
                   {showHotelSearchBar && <div ref={hotelLocationListRef} className='w-full lg:w-full h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
@@ -151,18 +186,18 @@ const SearchOption = ({searchOptionValue}) => {
                   </div>}
                 </div>
 
-                <div className='flex gap-2 relative my-2 lg:my-0'>
+                <div className='flex gap-2 w-full relative my-2 lg:my-0'>
                   <div
                     onClick={(e) => {
                       e.stopPropagation()
-                      setShowHotelBookingDate(true)
+                      setShowHotelBookingDate(!showHotelBookingDate)
                     }}
                     className="border border-gray-300 outline-none w-full h-[65px]  flex p-1 gap-2 cursor-pointer relative">
 
 
                     <div className="flex  flex-col justify-center">
-                      <p className="text-xs text-gray-500 uppercase">Check out</p>
-                      <h3 className=" font-bold"><span>{startDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{startDateFormat?.split(',')[2]}</span></h3>
+                      <p className="text-xs text-gray-500 uppercase">Check in</p>
+                      <h3 className="text-xs font-bold"><span>{startDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{startDateFormat?.split(',')[2]}</span></h3>
                       <p className='text-xs text-gray-500'>{startDateFormat?.split(',')[0]}</p>
                     </div>
                   </div>
@@ -179,67 +214,89 @@ const SearchOption = ({searchOptionValue}) => {
 
                     <div className="flex  flex-col justify-center">
                       <p className="text-xs text-gray-500 uppercase">Check out</p>
-                      <h3 className=" font-bold"><span>{endDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{endDateFormat?.split(',')[2]}</span></h3>
+                      <h3 className="text-xs font-bold"><span>{endDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{endDateFormat?.split(',')[2]}</span></h3>
                       <p className='text-xs text-gray-500'>{endDateFormat?.split(',')[0]}</p>
                     </div>
                   </div>
                   {showHotelBookingDate && <div ref={bookingRef} className='bg-white absolute z-10 top-[70px] p-3 shadow-2xl rounded-lg'> <DateRangeCalender setSendData={setSelectBookingDate} SetAction={setShowHotelBookingDate} visible={visible} /></div>}
                 </div>
 
-                <div className="hidden border border-gray-300 outline-none w-full  h-[65px]  lg:flex p-1 gap-2 cursor-pointer">
-                  <div className="flex items-center">
-                    <button className="text-[#F0721D]">
-                      <LocationIcon />
-                    </button>
+                <div onClick={(e) => {
+                  e.stopPropagation();
+                  setShowBookingCount(!showBookingCount)
+                }} className={` border border-gray-300 outline-none w-full    lg:flex p-3 gap-2 cursor-pointer  relative ${!style && 'mb-2'}`}>
+
+                  <div className="">
+                    <p className="text-xs text-gray-500">Rooms and Guests</p>
+                    <div className='flex items-center gap-2'>
+                      <h3 className="text-[15px] ">
+                        <span className="font-bold">{bookingCounter.rooms}</span> <span className='text-xs'>{bookingCounter.rooms > 1 ? 'Rooms' : 'Room'}</span> ,{" "}
+                        <span className="font-bold">{parseInt(bookingCounter.adults + parseInt(bookingCounter.children))} </span><span className="text-xs">Guest</span>
+                      </h3>
+
+                      <p className="text-[12px] text-gray-500 ">(
+                        <span className="font-bold">{bookingCounter.adults}</span> Adults,{" "}
+                        <span className="font-bold">{bookingCounter.children}</span> Children
+                        )
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="flex items-center flex-col justify-center">
-                    <p className="text-xs text-gray-500">Rooms & Guests</p>
-                    <h3 className="text-[15px] ">
-                      <span className="font-bold">1 </span>Room,{" "}
-                      <span className="font-bold">3 </span>Guest
-                    </h3>
 
-                    <p className="text-[12px] text-gray-500 ">
-                      <span className="font-bold">2</span> Adults,{" "}
-                      <span className="font-bold">1</span> Child
-                    </p>
-                  </div>
+                  {showBookingCount && <div ref={bookingCounterRef} className='w-full h-40 bg-white shadow-2xl absolute left-0 top-[70px] z-10 p-2 rounded-lg' >
+                    <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
+                      <h2 className='text-xs font-semibold '>{roomsCount > 1 ? 'Rooms' : 'Room'}</h2>
+                      <div className='flex items-center gap-7'>
+                        <MinusIcon onClick={roomsCount > 1 ? () => handleDecrement(setRoomsCount, roomsCount) : null} className={`${roomsCount <= 1 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
+                        <span className='text-xs cursor-text w-7 text-center'>{roomsCount}</span>
+                        <PlusIcon onClick={() => handleIncriment(setRoomsCount, roomsCount)} className={`  hover:text-primaryColor`} />
+                      </div>
+                    </div>
+
+
+                    <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
+                      <h2 className='text-xs font-semibold '>Adults</h2>
+                      <div className='flex items-center gap-7'>
+                        <MinusIcon onClick={adultsCount > 1 ? () => handleDecrement(setAdultsCount, adultsCount) : null} className={`${adultsCount <= 1 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
+                        <span className='text-xs cursor-text w-7 text-center'>{adultsCount}</span>
+                        <PlusIcon onClick={() => handleIncriment(setAdultsCount, adultsCount)} className={`  hover:text-primaryColor`} />
+                      </div>
+                    </div>
+
+
+                    <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
+                      <h2 className='text-xs font-semibold '>Children</h2>
+                      <div className='flex items-center gap-7'>
+                        <MinusIcon onClick={childrenCount > 0 ? () => handleDecrement(setChildrenCount, childrenCount) : null} className={`${childrenCount <= 0 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
+                        <span className='text-xs cursor-text w-7 text-center'>{childrenCount}</span>
+                        <PlusIcon onClick={() => handleIncriment(setChildrenCount, childrenCount)} className={`  hover:text-primaryColor`} />
+                      </div>
+                    </div>
+
+                    <hr />
+                    <div className='flex items-center justify-between mt-4'>
+                      <p className="text-[12px] text-gray-500 ">(
+                        <span className="font-bold">{bookingCounter.rooms}</span> {bookingCounter.rooms > 1 ? 'Rooms' : 'Room'},{" "}
+                        <span className="font-bold">{bookingCounter.adults}</span> Adults,{" "}
+                        <span className="font-bold">{bookingCounter.children}</span> Children
+                        )
+                      </p>
+                      <button onClick={() => handleSunmitBookingCounter()} className='bg-primaryColor text-white text-xs font-semibold p-2 px-3  rounded-lg'>Done</button>
+                    </div>
+                  </div>}
+                  
                 </div>
               </div>
 
-              <div className="lg:hidden border my-2 border-gray-300 outline-none w-full  h-[65px]  flex p-1 gap-2 cursor-pointer">
-                <div className="flex items-center">
-                  <button className="text-[#F0721D]">
-                    <LocationIcon />
-                  </button>
-                </div>
 
-                <div className="flex items-center flex-col justify-center">
-                  <p className="text-xs text-gray-500">Rooms & Guests</p>
-                  <h3 className="text-[15px] ">
-                    <span className="font-bold">1 </span>Room,{" "}
-                    <span className="font-bold">3 </span>Guest
-                  </h3>
 
-                  <p className="text-[12px] text-gray-500 ">
-                    <span className="font-bold">2</span> Adults,{" "}
-                    <span className="font-bold">1</span> Child
-                  </p>
-                </div>
-              </div>
-
-              <div className='lg:flex items-center justify-center'>
-                <div onClick={() => {
+              <div className='flex items-center justify-center'>
+                <button onClick={() => {
                   console.log(selectHotelLocation);
-                }} className="border w-full lg:w-40  h-[65px] bg-[#F0721D] rounded-lg lg:rounded-r-xl lg:mt-2 flex items-center justify-center  group cursor-pointer">
-                  <p className="text-xs text-white transition-all ease-linear duration-300 group-hover:opacity-0">
-                    Search..
-                  </p>
-                  <button className="text-3xl text-white absolute transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100">
-                    <SearchIcon />
-                  </button>
-                </div>
+
+                }}
+                  className={`bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4   ${style ? 'w-40 mt-2' : 'w-full'}`}
+                >Search </button>
               </div>
             </section>
 
@@ -249,7 +306,7 @@ const SearchOption = ({searchOptionValue}) => {
 
 
         {searchOptionValue === 'tour' &&
-          <section className='w-full'>
+          <section className='w-full p-2'>
 
             <div onClick={(e) => {
               e.stopPropagation();
@@ -258,19 +315,20 @@ const SearchOption = ({searchOptionValue}) => {
 
 
               <div className="border border-gray-300 outline-none w-full h-[65px] rounded-l-xl flex p-1 gap-2 cursor-pointer relative">
-                <div className="flex items-center">
-                  <button className="text-[#F0721D]">
-                    <LocationIcon />
-                  </button>
+
+                <div onClick={(e) => {
+                  e.stopPropagation();
+                  setShowTourSearchBar(!showTourSearchBar);
+                }} className='lg:border rounded-lg w-[370px]  lg:w-96 p-3 cursor-pointer flex items-center gap-2'>
+                  <SearchIcon />
+                  <div>
+                    <h2 className='text-xs text-gray-500'>Destination</h2>
+                    <p className='font-semibold text-gray-600'>{selectTourLocation ? `${selectTourLocation.length > 35 ? `${selectTourLocation.slice(0, 35)} . . . .` : selectTourLocation}` : 'Select your dectination'}</p>
+                  </div>
                 </div>
 
-                <div className="flex justify-center  flex-col ">
-                  <p className="text-xs text-gray-500">Location/From</p>
-                  <h3 className="text-[10px] lg:text-lg font-bold">{selectTourLocation ? selectTourLocation : 'Your location'}</h3>
-                </div>
 
-
-                {showTourSearchBar ? <div ref={tourLocationListRef} className='w-full lg:w-[43%] h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
+                {showTourSearchBar ? <div ref={tourLocationListRef} className='w-full lg:w-full h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
                   <div className='w-full h-10  flex items-center relative border-b border-gray-400'>
                     <SearchIcon className='absolute text-gray-500' />
                     <input
@@ -290,18 +348,13 @@ const SearchOption = ({searchOptionValue}) => {
               </div>
             </div>
 
-            <div className='lg:flex items-center justify-center'>
-              <div onClick={() => {
+            <div className='flex items-center justify-center'>
+              <button onClick={() => {
                 console.log(selectTourLocation);
 
-              }} className="border w-full lg:w-40 h-[65px] bg-[#F0721D] rounded-lg lg:rounded-r-xl flex items-center justify-center  group cursor-pointer">
-                <p className="text-xs text-white transition-all ease-linear duration-300 group-hover:opacity-0">
-                  Search..
-                </p>
-                <button className="text-3xl text-white absolute transition-all ease-linear duration-300 opacity-0 group-hover:opacity-100">
-                  <SearchIcon />
-                </button>
-              </div>
+              }}
+                className='bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4 mb-2'
+              >Search </button>
             </div>
           </section>
         }

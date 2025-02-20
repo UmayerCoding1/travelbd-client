@@ -1,0 +1,15 @@
+.rating-btn{
+  position: relative;
+  border-radius: 10px 0 10px 10px;
+}
+
+/* .rating-btn::after{
+   content: '';
+   background: #0f294d;
+   width: 16px;
+   height: 16px;
+   border-radius: 10px 0 10px 10px;
+   display: block;
+   position: absolute;
+   top: 0; right: 1px;
+} */

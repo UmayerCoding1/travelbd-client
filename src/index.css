@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +14,7 @@
   text-decoration: none;
   list-style: none;
   font-family: "Poppins", sans-serif;
-  user-select: none;
+  /* user-select: none; */
 }
 
 html,
@@ -36,6 +38,16 @@ a.active:hover {
 
 a.active svg {
   color: green;
+}
+
+
+.glass{
+  background-image: linear-gradient(135deg, rgba(40, 38, 38, 0.527), rgba(64, 59, 59, 0.199));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 1px 1px 1px rgba(45, 44, 44, 0.218);
+  padding: 4px;
+  border-radius: 10px;
 }
 
 .swiper {

@@ -1,7 +1,7 @@
 [
   {
     "hotelName": "Royal Pearl Suites",
-    "hotelType":"Hotel",
+    "hotelType": "Hotel",
     "location": "Royal Pearl Suites, Cox's Bazar Light House, Cox's Bazar, Kolatoli, Cox's Bazar, Bangladesh",
     "star": 3,
     "nearby": [
@@ -39,27 +39,27 @@
       "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/hotel_images/large-KvatrWaKheSwimming%20Pool.jpg"
     ],
     "rooms": [
-       {
-        "title":"Superior Suite",
-        "people":{
-          "adults":2,
-          "children":1
+      {
+        "title": "Superior Suite",
+        "people": {
+          "adults": 2,
+          "children": 1
         },
-        "catering":{
+        "catering": {
           "morning": true,
           "lunch": false,
           "dinner": false
         },
-        "bad":"Double",
-        "RoomCapacity":3,
-        "available":7,
-        "roomType":"Double",
-        "roomCharacteristics":"Deluxe",
-        "roomView":"City",
-        "facilities":[
+        "bad": "Double",
+        "RoomCapacity": 3,
+        "available": 7,
+        "roomType": "Double",
+        "roomCharacteristics": "Deluxe",
+        "roomView": "City",
+        "facilities": [
           {
-            "category":"Bedroom Facilities",
-            "item":[
+            "category": "Bedroom Facilities",
+            "item": [
               "Air Conditioning",
               "Fan",
               "In-Room Safe",
@@ -72,8 +72,8 @@
             ]
           },
           {
-            "category":"Media & Technology",
-            "item":[
+            "category": "Media & Technology",
+            "item": [
               "Cable TV",
               "Telephone",
               "TV",
@@ -81,16 +81,16 @@
             ]
           },
           {
-            "category":"Food & Drink",
-            "item":[
+            "category": "Food & Drink",
+            "item": [
               "Coffee/Tea Maker",
               "Free Bottled Water",
               "Mini Fridge"
             ]
           },
           {
-            "category":"Bathroom Facilities",
-            "item":[
+            "category": "Bathroom Facilities",
+            "item": [
               "Towels",
               "Toiletries",
               "Hot Water",
@@ -99,8 +99,8 @@
             ]
           },
           {
-            "category":"Others",
-            "item":[
+            "category": "Others",
+            "item": [
               "220V Socket",
               "Desk",
               "Disability-friendly Bathroom",
@@ -120,37 +120,37 @@
             ]
           }
         ],
-        "roomImage":[
+        "roomImage": [
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-4TmamalyDlSuperior%20Deluxe%20Suite.jpg",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-SIMbINIMqLSuperior%20Deluxe%20Suite%20Leaving%20Room.jpg",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375083/large-lIg4IjCmdxSuporior%20Deluxe.png"
         ],
-        "price":9487,
-        "discount":62,
-        "texes":942,
-        "duration":"1 Night"
-       },
-       {
-        "title":"Elite Suite",
-        "people":{
-          "adults":4,
-          "children":2
+        "price": 9487,
+        "discount": 62,
+        "texes": 942,
+        "duration": "1 Night"
+      },
+      {
+        "title": "Elite Suite",
+        "people": {
+          "adults": 4,
+          "children": 2
         },
-        "catering":{
+        "catering": {
           "morning": true,
           "lunch": false,
           "dinner": false
         },
-        "bad":"Double",
-        "RoomCapacity":5,
-        "available":1,
-        "roomType":" Suite",
-        "roomCharacteristics":"None",
-        "roomView":"Hill",
-        "facilities":[
+        "bad": "Double",
+        "RoomCapacity": 5,
+        "available": 1,
+        "roomType": " Suite",
+        "roomCharacteristics": "None",
+        "roomView": "Hill",
+        "facilities": [
           {
-            "category":"Bedroom Facilities",
-            "item":[
+            "category": "Bedroom Facilities",
+            "item": [
               "Air Conditioning",
               "Fan",
               "In-Room Safe",
@@ -163,8 +163,8 @@
             ]
           },
           {
-            "category":"Media & Technology",
-            "item":[
+            "category": "Media & Technology",
+            "item": [
               "Cable TV",
               "Telephone",
               "TV",
@@ -172,16 +172,16 @@
             ]
           },
           {
-            "category":"Food & Drink",
-            "item":[
+            "category": "Food & Drink",
+            "item": [
               "Coffee/Tea Maker",
               "Free Bottled Water",
               "Mini Fridge"
             ]
           },
           {
-            "category":"Bathroom Facilities",
-            "item":[
+            "category": "Bathroom Facilities",
+            "item": [
               "Towels",
               "Toiletries",
               "Hot Water",
@@ -190,8 +190,8 @@
             ]
           },
           {
-            "category":"Others",
-            "item":[
+            "category": "Others",
+            "item": [
               "220V Socket",
               "Desk",
               "Disability-friendly Bathroom",
@@ -211,7 +211,7 @@
             ]
           }
         ],
-        "roomImage":[
+        "roomImage": [
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-AxxHTK4DM5Elite%20Suite%202%20(1).jpg",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-SBYPfla2Solarge-hWcstdo2rRElite%20Suite%201%20(1).jpg",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-cnYknl47yflarge-irQhQUgDj1ELIT%20(1).jpeg",
@@ -220,15 +220,22 @@
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/688862/gozayaan/room_images/5375084/large-sfc5vX05Yblarge-cVrSmxQhN4ELIT%20(15).jpeg"
         ],
         "price": 23716,
-        "discount":46,
-        "texes":3351,
-        "duration":"1 Night"
-       }
-    ]
+        "discount": 46,
+        "texes": 3351,
+        "duration": "1 Night"
+      }
+    ],
+    "pricing": {
+      "price": 9487,
+      "discount": 62,
+      "texes": 942
+    },
+    "duration": "1 Night",
+    "onlinePayment": true
   },
   {
     "hotelName": "CCULB Resort & Convention Hall",
-    "hotelType":"Resort",
+    "hotelType": "Resort",
     "location": "Ulokhola (Jora Pump), Near Purbachal, Kaligonj, Gazipur, Bangladesh",
     "star": 4,
     "nearby": [
@@ -287,27 +294,27 @@
       "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-KvABfeQ0g7DJI_0721.jpg"
     ],
     "rooms": [
-       {
-        "title":"Super Deluxe - Couple",
-        "people":{
-          "adults":2,
-          "children":null
+      {
+        "title": "Super Deluxe - Couple",
+        "people": {
+          "adults": 2,
+          "children": null
         },
-        "catering":{
+        "catering": {
           "morning": true,
           "lunch": false,
           "dinner": false
         },
-        "bad":"King",
-        "RoomCapacity":3,
-        "available":2,
-        "roomType":"Double",
-        "roomCharacteristics":"Deluxe",
-        "roomView":"City",
-        "facilities":[
+        "bad": "King",
+        "RoomCapacity": 3,
+        "available": 2,
+        "roomType": "Double",
+        "roomCharacteristics": "Deluxe",
+        "roomView": "City",
+        "facilities": [
           {
-            "category":"Bedroom Facilities",
-            "item":[
+            "category": "Bedroom Facilities",
+            "item": [
               "Air Conditioning",
               "Fan",
               "In-Room Safe",
@@ -320,8 +327,8 @@
             ]
           },
           {
-            "category":"Media & Technology",
-            "item":[
+            "category": "Media & Technology",
+            "item": [
               "Cable TV",
               "Telephone",
               "TV",
@@ -329,16 +336,16 @@
             ]
           },
           {
-            "category":"Food & Drink",
-            "item":[
+            "category": "Food & Drink",
+            "item": [
               "Coffee/Tea Maker",
               "Free Bottled Water",
               "Mini Fridge"
             ]
           },
           {
-            "category":"Bathroom Facilities",
-            "item":[
+            "category": "Bathroom Facilities",
+            "item": [
               "Towels",
               "Toiletries",
               "Hot Water",
@@ -347,8 +354,8 @@
             ]
           },
           {
-            "category":"Others",
-            "item":[
+            "category": "Others",
+            "item": [
               "220V Socket",
               "Desk",
               "Disability-friendly Bathroom",
@@ -368,7 +375,7 @@
             ]
           }
         ],
-        "roomImage":[
+        "roomImage": [
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-voJzsABJey391A4175.JPG",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-g21wjTSYLp391A4174.JPG",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-LxRWaxDxun391A4181.JPG",
@@ -376,32 +383,32 @@
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-ZHMxC8aV9S391A4754.JPG",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376458/large-WOQPEn4lGLDSC_0058.JPG"
         ],
-        "price":9882,
-        "discount":47,
-        "texes":1361,
-        "duration":"1 Night"
-       },
-       {
-        "title":"Premium Deluxe",
-        "people":{
-          "adults":4,
-          "children":null
+        "price": 9882,
+        "discount": 47,
+        "texes": 1361,
+        "duration": "1 Night"
+      },
+      {
+        "title": "Premium Deluxe",
+        "people": {
+          "adults": 4,
+          "children": null
         },
-        "catering":{
+        "catering": {
           "morning": true,
           "lunch": false,
           "dinner": false
         },
-        "bad":"King",
-        "RoomCapacity":3,
-        "available":2,
-        "roomType":" Double",
-        "roomCharacteristics":"Premium",
-        "roomView":"Garden ",
-        "facilities":[
+        "bad": "King",
+        "RoomCapacity": 3,
+        "available": 2,
+        "roomType": " Double",
+        "roomCharacteristics": "Premium",
+        "roomView": "Garden ",
+        "facilities": [
           {
-            "category":"Bedroom Facilities",
-            "item":[
+            "category": "Bedroom Facilities",
+            "item": [
               "Air Conditioning",
               "Fan",
               "In-Room Safe",
@@ -414,8 +421,8 @@
             ]
           },
           {
-            "category":"Media & Technology",
-            "item":[
+            "category": "Media & Technology",
+            "item": [
               "Cable TV",
               "Telephone",
               "TV",
@@ -423,16 +430,16 @@
             ]
           },
           {
-            "category":"Food & Drink",
-            "item":[
+            "category": "Food & Drink",
+            "item": [
               "Coffee/Tea Maker",
               "Free Bottled Water",
               "Mini Fridge"
             ]
           },
           {
-            "category":"Bathroom Facilities",
-            "item":[
+            "category": "Bathroom Facilities",
+            "item": [
               "Towels",
               "Toiletries",
               "Hot Water",
@@ -441,8 +448,8 @@
             ]
           },
           {
-            "category":"Others",
-            "item":[
+            "category": "Others",
+            "item": [
               "220V Socket",
               "Desk",
               "Disability-friendly Bathroom",
@@ -462,7 +469,7 @@
             ]
           }
         ],
-        "roomImage":[
+        "roomImage": [
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-CDSBlJMnIh_TOY8602.jpg",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-8IzqmFsbIH391A4605.JPG",
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-lqDNFi0RIQ391A4618.JPG",
@@ -473,10 +480,17 @@
           "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/room_images/5376459/large-OpOuuz8hDpDSC_0058.JPG"
         ],
         "price": 10672,
-        "discount":51,
-        "texes":1361,
-        "duration":"1 Night"
-       }
-    ]
+        "discount": 51,
+        "texes": 1361,
+        "duration": "1 Night"
+      }
+    ],
+    "priceing": {
+      "price": 9882,
+      "discount": 47,
+      "texes": 1361
+    },
+    "duration": "1 Night",
+    "onlinePayment": false
   }
 ]

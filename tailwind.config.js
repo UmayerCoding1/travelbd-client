@@ -8,10 +8,13 @@ export default {
     extend: {
       fontFamily: {
         AlexBrush: "'Alex Brush', cursive",
-        Inconsolata: "'Inconsolata', monospace"
+        Inconsolata: "'Inconsolata', monospace",
+        bodyTextFontLato:  "'Lato', serif",
+        bodyTextFontRaleway:  "'Raleway', serif",
       },
       colors: {
-        primaryColor: '#0085C9'
+        primaryColor: '#0085C9',
+        Headings:'#0f294d'
       },
       
       boxShadow: {

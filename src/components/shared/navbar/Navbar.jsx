@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { logo, userImg } from '../../../provider/ImageProvider';
 import { Link, NavLink } from 'react-router';
-import { ArrowDownIcon, BookingIcon, CloseIcon, HeartICon, LogoutIcon, MenuIcon, ProfileIcon, RightArrowIcon } from '../../../provider/IconProvider';
+import { ArrowDownIcon, BookingIcon, HeartICon, MenuIcon, ProfileIcon, RightArrowIcon } from '../../../provider/IconProvider';
 import useAuth from '../../../hooks/useAuth';
 import Logout from '../logout/Logout';
 import { HiOutlineXMark } from "react-icons/hi2";
-// import useLoggedUserData from '../../../hooks/useLoggedUserData';
+
 
 const Navbar = () => {
   const [showNav, setShowNav] = useState(false);
@@ -14,9 +14,8 @@ const Navbar = () => {
   const hideUserNavRef = useRef(null);
 
   const navLink = <>
-    <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/'}>Home</NavLink></li>
-    <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/hotel'}>Hotel</NavLink></li>
     <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/destinations'}>Destinations</NavLink></li>
+    <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/hotel'}>Hotel</NavLink></li>
     <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/travel-blog'}>Travel Blog</NavLink></li>
     <li className='font-semibold mr-5 text-[13px]'><NavLink to={'/contact-us'}>Contact Us</NavLink></li>
   </>
@@ -44,7 +43,7 @@ const Navbar = () => {
     };
   }, [showNav]);
 
-  console.log('show nav',showNav);
+ 
   return (
     <header className='mb-2 shadow-lg p-2 '>
       {/* dectop */}
@@ -56,7 +55,7 @@ const Navbar = () => {
         </ul>
 
         <div>
-
+           
           {user ? <div>
 
             <div onClick={(e) => {

@@ -23,7 +23,7 @@ const DestinationDetails = () => {
         <div className='my-5 lg:p-10 relative'>
             <div className='lg:flex '>
                    <div className='lg:w-[70%] lg:h-96  lg:flex gap-4 '>
-                   <ImageSlider  image={image} style={'lg:w-[85%] h-96 bg-red-500 '}/>
+                   <ImageSlider  image={image} style={'lg:w-[85%] h-96  '}/>
                 
 
                 <div className='lg:w-[20%] flex lg:block items-center justify-between mt-2 lg:mt-0'>

@@ -15,7 +15,7 @@ const Destinations = () => {
   const [filterValue, setFilterValue] = useState({})
   const [locations, setLocations] = useState([]);
   const tourLocationRef = useRef(null);
-  const sortSectionRef = useRef(null);
+  const sortSortRef = useRef(null);
   const [destinations] = useDestinations(filterValue);
 
   const filterLocation = locations.filter(location => location?.title.toLowerCase().includes(searchLocation?.toLowerCase()));
@@ -26,7 +26,7 @@ const Destinations = () => {
       if (tourLocationRef.current && !tourLocationRef.current.contains(e.target)) {
         setShowDestinationDropdown(false);
       }
-      if (sortSectionRef.current && !sortSectionRef.current.contains(e.target)) {
+      if (sortSortRef.current && !sortSortRef.current.contains(e.target)) {
         setShowSortDropDown(false);
       }
     }
@@ -94,7 +94,7 @@ const Destinations = () => {
             </div>
           </div>
 
-          <div className=' flex items-center gap-2 '>
+          <div className=' flex items-center gap-2  mt-2'>
             <div className='lg:hidden'>
               <button onClick={() => setShowFilter(!showFilter)} className='flex items-center bg-white p-2 rounded-lg font-semibold'>Filter <DownIcon /></button>
 
@@ -109,7 +109,7 @@ const Destinations = () => {
               </div>}
 
             </div>
-            <Sort sortSectionRef={sortSectionRef} setShowSortDropDown={setShowSortDropDown} showSortDropdown={showSortDropdown} />
+            <Sort sortSectionRef={sortSortRef} setShowSortDropDown={setShowSortDropDown} showSortDropdown={showSortDropdown} />
           </div>
         </div>
       </div>

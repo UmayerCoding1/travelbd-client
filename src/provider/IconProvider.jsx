@@ -22,9 +22,11 @@ import { FaMessage } from "react-icons/fa6";
 import { IoIosInformationCircle } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoMdArrowDropup } from "react-icons/io";
-import { GoChevronLeft } from "react-icons/go"
+import { GoChevronLeft } from "react-icons/go";
+import { GoChevronRight } from "react-icons/go";
 import { IoIosStar } from "react-icons/io";
-
+import { FaCircleMinus } from "react-icons/fa6";
+import { FaCirclePlus } from "react-icons/fa6";
 export {
     LuMoveRight as RightArrowIcon,
     MdSearch as SearchIcon,
@@ -50,6 +52,9 @@ export {
     IoIosInformationCircle as InfoIcon,
     RiMenu3Fill as MenuIcon,
     GoChevronLeft as LeftIcon,
-    IoIosStar as StarIcon
+    GoChevronRight as RightIcon,
+    IoIosStar as StarIcon,
+    FaCircleMinus as MinusIcon,
+    FaCirclePlus as PlusIcon
     
 }

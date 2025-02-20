@@ -8,6 +8,7 @@ import PrivetRoute from "./PrivetRoute";
 import DestinationDetails from "../components/shared/destinatinDetails/DestinationDetails";
 import Destinations from "../components/pages/destinatons/destinations";
 import Hotels from "../components/pages/hotels/Hotels";
+import HotelDetails from "../components/pages/hotels/hotel-details/HotelDetails";
 
 const render = createBrowserRouter([
     {
@@ -34,7 +35,9 @@ const render = createBrowserRouter([
                 element: <Hotels/>
             },
             {
-                path:'/hotel:id'
+                path:'/to/hotel/:id/hotel-deatils',
+                element: <HotelDetails/>,
+                loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_LOCAL}/HOTEL/${params.id}`)
             },
 
 

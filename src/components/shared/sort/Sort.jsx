@@ -13,7 +13,7 @@ const Sort = ({ sortSectionRef, setShowSortDropDown, showSortDropdown }) => {
 
 
   return (
-    <div className='mt-2 lg:mt-0 cursor-pointer relative'>
+    <div className=' lg:mt-0 cursor-pointer lg:border border-black rounded-lg relative'>
       <div onClick={(e) => {
         e.stopPropagation();
         setShowSortDropDown(!showSortDropdown)
