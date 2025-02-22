@@ -11,7 +11,7 @@ const DateRangeCalender = ({setSendData, SetAction,visible,btnText}) => {
         }
     ]);
     const [tempSelection, setTempSelection] = useState(state);
-    console.log(visible);
+    
     
     
 

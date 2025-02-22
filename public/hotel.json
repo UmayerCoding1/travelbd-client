@@ -3,6 +3,10 @@
     "hotelName": "Royal Pearl Suites",
     "hotelType": "Hotel",
     "location": "Royal Pearl Suites, Cox's Bazar Light House, Cox's Bazar, Kolatoli, Cox's Bazar, Bangladesh",
+    "numberOfRooms": 58,
+    "numberOfFloors": 10,
+    "yearOfConstruction": 2021,
+    "description": "Royal Pearl is an ideal choice for your comfortable stay. It is located in the heart of Cox's Bazar and just minutes away from Cox's Bazar Airport where you can find sophisticated accommodation with a very welcoming atmosphere.",
     "star": 3,
     "nearby": [
       "1.2 km from Laboni Point Sea Beach",
@@ -233,10 +237,15 @@
     "duration": "1 Night",
     "onlinePayment": true
   },
+
   {
     "hotelName": "CCULB Resort & Convention Hall",
     "hotelType": "Resort",
     "location": "Ulokhola (Jora Pump), Near Purbachal, Kaligonj, Gazipur, Bangladesh",
+    "numberOfRooms": 116,
+    "numberOfFloors": 6,
+    "yearOfConstruction": 2020,
+    "description": "CCULB Resort & Convention Hall, a 4-Star Facilitated Domestic Hotel of The Co-Operative Credit Union League of Bangladesh Limited, is focused on making The CCULB Resort & Convention Hall one of the foremost international standard luxury destinations in Bangladesh. CCULB Resort welcomes you in Purbachal, Gazipur, to enjoy your holiday or meet your business needs with comfort and luxury. Our newly built 4-Star Resort in Purbachal, Gazipur, is equipped with all modern, state-of-the-art amenities and facilities. This resort is the true combination of ultimate luxury and gracious hospitality, near Dhaka. CCULB Resort & Convention Hall offers luxuriously furnished guest rooms and suites, multi-cuisine restaurants, a lobby café, bar, fitness center, Cinemax, swimming pool, and the city's most beautiful fine dining restaurant with a magnificent forest view. This beautiful, 4-star property is ideally located in the central business area of Ulukhola, Purbachal, and Gazipur.",
     "star": 4,
     "nearby": [
       "0.85 km from Mothbari Bazar",
@@ -293,6 +302,7 @@
       "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-mMaDZEebAEWhatsApp%20Image%202024-12-30%20at%209.58.27%20PM.jpeg",
       "https://storage.googleapis.com/gz-main-prod-main/media/hotel/689165/gozayaan/hotel_images/large-KvABfeQ0g7DJI_0721.jpg"
     ],
+
     "rooms": [
       {
         "title": "Super Deluxe - Couple",
@@ -485,7 +495,7 @@
         "duration": "1 Night"
       }
     ],
-    "priceing": {
+    "pricing": {
       "price": 9882,
       "discount": 47,
       "texes": 1361

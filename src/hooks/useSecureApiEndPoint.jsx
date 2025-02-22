@@ -2,8 +2,7 @@ import axios from 'axios';
 
 
 const axiosSecure = axios.create({
-baseURL: "http://localhost:5000/api/v1",
-    // baseURL: "https://travelbd-server-vgxf.onrender.com/api/v1",
+    baseURL: import.meta.env.VITE_API_ENDPOINT_PRODUCTION,
     withCredentials: true
 })
 const useSecureApiEndPoint = () => {

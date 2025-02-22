@@ -5,13 +5,35 @@ import { DownIcon } from '../../../provider/IconProvider';
 import Sort from '../../shared/sort/Sort';
 import HotelCart from './hotel-card/HotelCart';
 import HotelSkeleton from '../../shared/skeleton/hotel-skeleton/HotelSkeleton';
+import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router';
+
 
 const Hotels = () => {
   const [showSortDropdown, setShowSortDropDown] = useState(false);
   const sortSectionRef = useRef(null);
+  const location = useLocation();
   const { data } = useHotels();
+  
 
+  const hotelUrlParams = new URLSearchParams(location.search);
+  
+  const locationName = hotelUrlParams.get("location");
+  const checkIn = hotelUrlParams.get("chackIn");
+  const checkOut = hotelUrlParams.get("chackOut");
+  const rooms = hotelUrlParams.get("room");
+  const adults = hotelUrlParams.get("adults");
+  const children = hotelUrlParams.get("children");
 
+  const info = {
+    locationName,
+    checkIn,
+    checkOut,
+    rooms,
+    adults,
+    children
+  }
+  console.log(info);
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (sortSectionRef.current && !sortSectionRef.current.contains(e.target)) {
@@ -24,8 +46,13 @@ const Hotels = () => {
     }
   }, [])
 
+ 
   return (
     <div className='max-w-6xl mx-auto mt-2  lg:p-0'>
+      <Helmet>
+        <title>Hotels | Trevel BD</title>
+        <link rel="canonical" href="/" />
+      </Helmet>
       <div>
         <div className='hidden lg:block'>
           <SearchOption searchOptionValue={'hotel'} style={true} />
@@ -41,7 +68,7 @@ const Hotels = () => {
           <button onClick={() => setShowFilter(!showFilter)} className='flex items-center bg-white p-2 rounded-lg font-semibold'>Filter <DownIcon /></button>
         </div>
 
-        <p className='hidden lg:block absolute z-10 left-4 font-medium'>{data?.length} Total Hotels</p>
+        <p className='hidden lg:block absolute  left-4 font-medium'>{data?.length} Total Hotels</p>
 
         <div>
           <Sort sortSectionRef={sortSectionRef} setShowSortDropDown={setShowSortDropDown} showSortDropdown={showSortDropdown} />

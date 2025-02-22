@@ -5,6 +5,7 @@ import Sort from '../../shared/sort/Sort';
 import Card from '../../shared/card/Card';
 import Filter from './filter/Filter';
 import Loading from '../../shared/loading/Loading';
+import { Helmet } from 'react-helmet';
 
 const Destinations = () => {
   const [searchDestination, setSearchDestination] = useState('');
@@ -52,6 +53,9 @@ const Destinations = () => {
 
   return (
     <div className=' max-w-6xl mx-auto mt-2  lg:p-0'>
+      <Helmet>
+        <title>Destinations | Travel BD</title>
+      </Helmet>
       <div className='bg-blue-500 p-1 rounded-lg '>
         <div className=' rounded-lg lg:flex items-center justify-between  lg:p-2 '>
           <div className='flex items-center lg:gap-3 relative border bg-white p-1 rounded-lg'  >

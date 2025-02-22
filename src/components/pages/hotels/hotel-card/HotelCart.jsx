@@ -10,7 +10,7 @@ const HotelCart = ({ hotel }) => {
   const discountAmount = parseInt((price * discount) / 100);
 
   const review = 1000 //todo: add a field  to review from hotel data
-  console.log(hotel);
+  // console.log(hotel);
   return (
     
       <div className='mb-3 shadow-primaryShadow p-2 lg:flex gap-2 w-full '>

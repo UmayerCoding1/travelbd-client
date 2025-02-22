@@ -11,7 +11,7 @@ const ImageSlider = ({image,imageTitle,style}) => {
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
            {image?.map((img, i) => (
               <SwiperSlide key={i}>
-                 <img className="w-full rounded-lg h-full object-cover " src={img} alt="" title={imageTitle || null}/>
+                 <img className="w-full rounded-lg h-full object-cover  " src={img} alt="" title={imageTitle || null}/>
               </SwiperSlide>
            ))}
         </Swiper>

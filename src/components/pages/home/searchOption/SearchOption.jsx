@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { LocationIcon, MinusIcon, PlusIcon, SearchIcon } from '../../../../provider/IconProvider';
 import DateRangeCalender from '../../../shared/date-range/DateRange';
 import useTourLocation from '../../../../hooks/useTourLocation';
+import { useLocation, useNavigate } from 'react-router';
+import toast from 'react-hot-toast';
 
 const SearchOption = ({ searchOptionValue,style }) => {
   const [visible, setVisible] = useState(null);
@@ -16,7 +18,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
   const [selectTourLocation, setSelectTourLocation] = useState('');
   const [selectHotelLocation, setSelectHotelLocation] = useState('');
   const [selectBookingDate, setSelectBookingDate] = useState({});
-  const [locations, setLocations] = useState([]);
+  
 
   // room and guest information
   const [roomsCount, setRoomsCount] = useState(1);
@@ -31,6 +33,8 @@ const SearchOption = ({ searchOptionValue,style }) => {
   const hotelLocationListRef = useRef(null);
   const bookingRef = useRef(null);
   const bookingCounterRef = useRef(null);
+  const navigate = useNavigate();
+  // const location = useLocation();
   const { startDate, endDate } = selectBookingDate;
   const startDateFormat = new Intl.DateTimeFormat('en-US', {
     weekday: 'long',
@@ -44,10 +48,16 @@ const SearchOption = ({ searchOptionValue,style }) => {
     day: '2-digit',
     year: 'numeric'
   }).format(endDate || new Date());
+ const filterLocation = location.filter(location => location.title.toLowerCase().includes(searchLocation.toLowerCase() || searchHotel.toLowerCase()));
+ const hotelUrlParams = new URLSearchParams(location.search);
+  
+ const HotellocationName = hotelUrlParams.get("location");
+ const checkIn = hotelUrlParams.get("chackIn");
+ const checkOut = hotelUrlParams.get("chackOut");
+ const rooms = hotelUrlParams.get("room");
+ const adults = hotelUrlParams.get("adults");
+ const children = hotelUrlParams.get("children");
 
-
-
-  const filterLocation = locations.filter(location => location.title.toLowerCase().includes(searchLocation.toLowerCase() || searchHotel.toLowerCase()));
 
 
   const fetchAddress = async (lat, lon) => {
@@ -88,10 +98,44 @@ const SearchOption = ({ searchOptionValue,style }) => {
       children: childrenCount,
     };
 
-    setBookingCounter(updatedBookingCounter)
+    setBookingCounter(updatedBookingCounter);
+    setShowBookingCount(false)
   }
 
+const handleTourSearch = (e) => {
+   if (!selectTourLocation ) {
+     return toast.error('Plese select your destination', {duration: 1500});
+   }
+   
+   if(selectTourLocation && selectTourLocation !== ''){
+     navigate(`/destinations?location=${selectTourLocation}`)
+   }
+   else{
+    console.log('something is missing');
+  }
+}
 
+const handleHotelSearch = (e) => {
+  const formatDate = (date) => {
+    return date ? `${ date?.getDate()},${date?.getMonth() + 1},${date?.getFullYear()}` : null;
+  }
+  const chackIn = formatDate(startDate);
+  const chackOut = formatDate(endDate);
+
+
+  if (!selectHotelLocation && selectHotelLocation === '') {
+   return  toast.error('select hotel location is missing')
+  }
+
+  if (chackIn === null && chackOut === null) {
+    return toast.error('Plese confirm chack in and chack out date', {duration: 1500})
+  }
+    if (selectHotelLocation && selectHotelLocation !== '' && chackIn && chackOut) {
+       navigate(`/hotel?location=${selectHotelLocation}&&chackIn=${chackIn}&&chackOut=${chackOut}&&room=${bookingCounter.rooms}&&adults=${bookingCounter.adults}&&children=${bookingCounter.children}`);
+    }else{
+      console.log('something is missing');
+    }  
+}
 
   useEffect(() => {
     const watchId = navigator.geolocation.watchPosition(
@@ -124,9 +168,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
 
     document.addEventListener('click', handleOutSiteClick);
 
-    fetch('location.json')
-      .then(res => res.json())
-      .then(data => setLocations(data))
+    
 
 
     return () => {
@@ -164,7 +206,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
 
                   <div className="flex  flex-col justify-center ">
                     <p className="text-xs text-gray-500 uppercase">City/Area</p>
-                    <h3 className="text-[15px] font-bold text-gray-600">{selectHotelLocation ? selectHotelLocation : 'Hotel location'}</h3>
+                    <h3 className="text-[15px] font-bold text-gray-600">{HotellocationName ? HotellocationName : selectHotelLocation ? selectHotelLocation : 'Hotel location'}</h3>
                   </div>
 
                   {showHotelSearchBar && <div ref={hotelLocationListRef} className='w-full lg:w-full h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
@@ -243,7 +285,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
                   </div>
 
 
-                  {showBookingCount && <div ref={bookingCounterRef} className='w-full h-40 bg-white shadow-2xl absolute left-0 top-[70px] z-10 p-2 rounded-lg' >
+                  {showBookingCount && <div onClick={(e) => e.stopPropagation()} ref={bookingCounterRef} className='w-full h-40 bg-white shadow-2xl absolute left-0 top-[70px] z-10 p-2 rounded-lg' >
                     <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
                       <h2 className='text-xs font-semibold '>{roomsCount > 1 ? 'Rooms' : 'Room'}</h2>
                       <div className='flex items-center gap-7'>
@@ -291,10 +333,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
 
 
               <div className='flex items-center justify-center'>
-                <button onClick={() => {
-                  console.log(selectHotelLocation);
-
-                }}
+                <button onClick={handleHotelSearch}
                   className={`bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4   ${style ? 'w-40 mt-2' : 'w-full'}`}
                 >Search </button>
               </div>
@@ -349,10 +388,7 @@ const SearchOption = ({ searchOptionValue,style }) => {
             </div>
 
             <div className='flex items-center justify-center'>
-              <button onClick={() => {
-                console.log(selectTourLocation);
-
-              }}
+              <button onClick={handleTourSearch}
                 className='bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4 mb-2'
               >Search </button>
             </div>

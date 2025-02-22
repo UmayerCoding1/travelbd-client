@@ -38,9 +38,9 @@ const BannerA = () => {
 
                 <div className='w-full lg:w-1/2 flex flex-col justify-center gap-4 order-2 lg:order-1'>
                     <h2 className='bg-primaryColor p-2 w-60 rounded-xl text-2xl font-AlexBrush text-white'>Know Before You GO</h2>
-                    <p className='text-2xl lg:text-4xl font-medium p-2 leading-tight bg-white text-primaryColor rounded-lg'>Explore the Beauty of Bangladesh with <span class="text-[#0B7019] font-semibold">TRAVEL</span>
-                        <span class="text-red-500 font-s font-semibold">BD</span>
-                        <span class="text-xs text-black font-semibold">.com</span></p>
+                    <p className='text-2xl lg:text-4xl font-medium p-2 leading-tight bg-white text-primaryColor rounded-lg'>Explore the Beauty of Bangladesh with <span className="text-[#0B7019] font-semibold">TRAVEL</span>
+                        <span className="text-red-500 font-s font-semibold">BD</span>
+                        <span className="text-xs text-black font-semibold">.com</span></p>
 
                     <p className='text-xs leading-relaxed text-white'>
                         "Explore Bangladesh’s stunning landscapes, rich culture, and hidden treasures. From serene beaches to lush greenery, TRAVELBD.com offers curated experiences for unforgettable journeys. Plan your perfect adventure today!"

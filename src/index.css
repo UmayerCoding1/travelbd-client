@@ -45,10 +45,13 @@ a.active svg {
   background-image: linear-gradient(135deg, rgba(40, 38, 38, 0.527), rgba(64, 59, 59, 0.199));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 1px 1px 1px rgba(45, 44, 44, 0.218);
+  /* box-shadow: 1px 1px 1px rgba(45, 44, 44, 0.218); */
   padding: 4px;
   border-radius: 10px;
 }
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+
 
 .swiper {
   width: 100%;

@@ -18,7 +18,7 @@ export default {
       },
       
       boxShadow: {
-        primaryShadow: "1px 1px 20px #63626294"
+        primaryShadow: "1px 1px 10px #63626294"
       },
       backgroundColor: {
         primaryBgColor: '#3b82f6'

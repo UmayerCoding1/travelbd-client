@@ -28,7 +28,7 @@ const render = createBrowserRouter([
             {
                 path:'/destination/:id',
                 element:<DestinationDetails/>,
-                loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_LOCAL}/destination/${params.id}`)
+                loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_PRODUCTION}/destination/${params.id}`)
             },
             {
                 path:'/hotel',
@@ -37,7 +37,7 @@ const render = createBrowserRouter([
             {
                 path:'/to/hotel/:id/hotel-deatils',
                 element: <HotelDetails/>,
-                loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_LOCAL}/HOTEL/${params.id}`)
+                loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_PRODUCTION}/HOTEL/${params.id}`)
             },
 
 

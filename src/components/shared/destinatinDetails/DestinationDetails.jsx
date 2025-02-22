@@ -6,6 +6,7 @@ import Accordion from '../Accordion/Accordion';
 import BookATour from './book-a-tour/BookATour';
 import TourConsultation from './tour-consultation/TourConsultation';
 import { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -21,6 +22,9 @@ const DestinationDetails = () => {
     
     return (
         <div className='my-5 lg:p-10 relative'>
+            <Helmet>
+                <title>{title} | Travel BD</title>
+            </Helmet>
             <div className='lg:flex '>
                    <div className='lg:w-[70%] lg:h-96  lg:flex gap-4 '>
                    <ImageSlider  image={image} style={'lg:w-[85%] h-96  '}/>

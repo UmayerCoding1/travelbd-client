@@ -5,6 +5,7 @@ import { ArrowDownIcon, BookingIcon, HeartICon, MenuIcon, ProfileIcon, RightArro
 import useAuth from '../../../hooks/useAuth';
 import Logout from '../logout/Logout';
 import { HiOutlineXMark } from "react-icons/hi2";
+import { Toaster } from 'react-hot-toast';
 
 
 const Navbar = () => {
@@ -116,6 +117,7 @@ const Navbar = () => {
           </div>
         </div>}
       </nav>
+      <Toaster position='top-right' reverseOrder={false}/>
     </header>
   );
 };

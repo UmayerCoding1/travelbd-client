@@ -12,6 +12,7 @@ import useSecureApiEndPoint from '../../../../hooks/useSecureApiEndPoint';
 import Loading from '../../../shared/loading/Loading';
 import { logo } from '../../../../provider/ImageProvider';
 import UsePublicApiEndpoint from '../../../../hooks/usePublicApiEndpoint';
+import { Helmet } from 'react-helmet';
 
 
 const Profile = () => {
@@ -24,7 +25,7 @@ const Profile = () => {
     const [user, setUser] = useState();
     const {setUser: updateSetUser} = useAuth();
     const secureApiEndPoint = useSecureApiEndPoint();
-    const aass = UsePublicApiEndpoint();
+    // const aass = UsePublicApiEndpoint();
     const [LoggedUser, loggedUserRefetch] = useLoggedUserData();
     useEffect(() => {
         if (LoggedUser && LoggedUser.length > 0) {
@@ -103,6 +104,7 @@ console.log(avatarImage);
     }
     return (
         <div className='  lg:p-20 pt-5 lg:grid grid-cols-4 gap-6'>
+            <Helmet><title>{user ? `${user.fullName} profile` : 'Profile'} | Travel BD</title></Helmet>
             <div className='bg-white shadow-lg w-full mb-5 lg:h-[52vh] col-span-1 p-1 pr-1 pt-2 '>
                 <div className='w-full flex items-center justify-between lg:justify-start  lg:gap-5'>
                     {user?.avatar ? <img className='cursor-default w-28 h-28 rounded-full' src={user?.avatar} alt='profile image' />

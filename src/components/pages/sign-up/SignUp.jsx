@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router';
 // import UseApiEndpoint from '../../../hooks/UseapiEndpoint';
 import useAuth from '../../../hooks/useAuth';
 import toast, { Toaster } from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 const SignUp = () => {
     const [error,setError] = useState('');
     const {createUser,setUser} = useAuth();
@@ -49,6 +50,7 @@ const SignUp = () => {
       }
     return (
         <div className='flex items-center justify-center h-screen bg-[#DADBDD] lg:p-10'>
+            <Helmet><title>Sign Up | Travel BD</title></Helmet>
         <div className='bg-white w-full h-full lg:flex'>
            <div className='w-full lg:w-[40%] p-5 pb-0 '>
             <Link to='/'>

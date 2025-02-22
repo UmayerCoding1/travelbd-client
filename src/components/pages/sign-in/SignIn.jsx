@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { CloseIcon } from '../../../provider/IconProvider';
 import Loading from '../../shared/loading/Loading';
 import UsePublicApiEndpoint from '../../../hooks/usePublicApiEndpoint';
+import { Helmet } from 'react-helmet';
 const SignIn = () => {
     const {loginUser,setUser,setLoading} = useAuth();
     const navigate = useNavigate();
@@ -48,7 +49,7 @@ const SignIn = () => {
     
     return (
         <div className='flex items-center justify-center lg:h-screen bg-[#DADBDD] lg:p-10 relative'>
-            
+            <Helmet><title>Sign in | Travel BD</title></Helmet>
             <div className='bg-white h-screen w-full  flex items-center justify-center'>
                
                <div className='w-full lg:w-[40%] lg:p-5 pb-0 '>
