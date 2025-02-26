@@ -5,7 +5,7 @@ import { GiWindow } from "react-icons/gi";
 import { CloseIcon, GroupIcon, SelectIcon } from '../../../../provider/IconProvider';
 const RoomDetails = ({ roomData, setOpenRoomDetails, setPrevScrollY }) => {
   const { title, bad, catering, people, RoomCapacity, available, discount, facilities, price, roomCharacteristics, roomImage, roomType, roomView, texes, _id } = roomData;
-  console.log(roomData);
+  
   return (
     <div className='w-full h-full bg-white lg:bg-[#00000057] absolute top-20 lg:top-0 left-0 z-10  lg:flex items-center justify-center font-bodyTextFontRaleway'>
       <div className='w-full lg:w-[75%] lg:h-[550px] lg:bg-white mt-5 p-2 rounded-lg relative'>

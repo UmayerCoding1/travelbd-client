@@ -9,7 +9,7 @@ import ReloadAnimation from '../shared/reload-animation/ReloadAnimation';
 
 const Root = () => {
     const {skeletonLoading} = useContext(ReloadLoadingContext);
-    console.log(skeletonLoading);
+    
     
     return (
         <div >

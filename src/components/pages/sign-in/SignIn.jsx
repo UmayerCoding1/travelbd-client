@@ -11,10 +11,10 @@ const SignIn = () => {
     const {loginUser,setUser,setLoading} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const navigateForm = location.state?.form?.pathname || '/';
+    const navigateForm = location.state?.form;
     const publicApiEndPoint = UsePublicApiEndpoint();
     
-    
+    console.log(location);
     const handleSignIn = (e) => {
        e.preventDefault();
        const from = e.target;

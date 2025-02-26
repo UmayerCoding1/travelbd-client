@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
-import { InfoIcon } from '../../../../provider/IconProvider';
-import useAuth from '../../../../hooks/useAuth';
+import { InfoIcon } from '../../../../../provider/IconProvider';
+import useAuth from '../../../../../hooks/useAuth';
 
 
 const BookATour = ({title,offer,tourData}) => {
@@ -64,6 +64,7 @@ const BookATour = ({title,offer,tourData}) => {
     return (
 
         <form onSubmit={handleBookATour} className='mt-5'>
+            a
             {title && <h1 className='text-center font-semibold my-3'>{title}</h1>}
             <div className='mb-3'>
                 <label className='text-xs font-medium' htmlFor="fullname">Full name</label> <br />

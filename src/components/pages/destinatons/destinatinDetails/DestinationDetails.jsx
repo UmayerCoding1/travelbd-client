@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router';
-import ImageSlider from '../image-slider/ImageSlider';
-import { ClockIcon, FolderIcon, GroupIcon, LocationIcon, MessageIcon, OptionIcon } from '../../../provider/IconProvider';
-import Accordion from '../Accordion/Accordion';
-import BookATour from './book-a-tour/BookATour';
-import TourConsultation from './tour-consultation/TourConsultation';
 import { Toaster } from 'react-hot-toast';
 import { Helmet } from 'react-helmet';
+import ImageSlider from '../../../shared/image-slider/ImageSlider';
+import {  ClockIcon, FolderIcon, GroupIcon, LocationIcon, MessageIcon, OptionIcon } from '../../../../provider/IconProvider';
+import Accordion from '../../../shared/Accordion/Accordion';
+import BookATour from './book-a-tour/BookATour';
+import TourConsultation from './tour-consultation/TourConsultation';
 
 
 

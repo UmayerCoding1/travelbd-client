@@ -33,7 +33,7 @@ const Hotels = () => {
     adults,
     children
   }
-  console.log(info);
+  
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (sortSectionRef.current && !sortSectionRef.current.contains(e.target)) {
@@ -41,11 +41,16 @@ const Hotels = () => {
       }
     }
     document.addEventListener('click', handleOutsideClick);
+
+    fetch('hotel.json')
+    .then(res => res.json())
+    .then(data => console.log(data))
     return () => {
       document.removeEventListener('click', handleOutsideClick);
-    }
+    }    
   }, [])
 
+  
  
   return (
     <div className='max-w-6xl mx-auto mt-2  lg:p-0'>
@@ -81,7 +86,7 @@ const Hotels = () => {
          ( <>
             <div className='bg-red-50 w-[25%] hidden lg:block'>1</div>
             <div className='w-full lg:w-[75%]'>
-              {data?.map(item => <HotelCart key={item.hotelName} hotel={item} />)}
+              {data?.map(item => <HotelCart key={item.hotelName} hotel={item}  searchdata={hotelUrlParams}/>)}
             </div>
           </>)
         }

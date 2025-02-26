@@ -117,7 +117,7 @@ const handleTourSearch = (e) => {
 
 const handleHotelSearch = (e) => {
   const formatDate = (date) => {
-    return date ? `${ date?.getDate()},${date?.getMonth() + 1},${date?.getFullYear()}` : null;
+    return date ? `${ date?.getDate()}-${date?.getMonth() + 1}-${date?.getFullYear()}` : null;
   }
   const chackIn = formatDate(startDate);
   const chackOut = formatDate(endDate);

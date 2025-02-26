@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData, useLocation } from 'react-router';
 import ImageSlider from '../../../shared/image-slider/ImageSlider';
 import { Rating } from '@mui/material';
 import { CloseIcon, LocationIcon } from '../../../../provider/IconProvider';
@@ -14,6 +14,9 @@ import { IoIosInformationCircleOutline as InfoIcon } from "react-icons/io";
 import parkingImg from '../../../../assets/image/parking.png';
 import Room from '../room/Room';
 import RoomDetails from '../room/RoomDetails';
+import HotelReview from '../hotel-review/HotelReview';
+import useAuth from '../../../../hooks/useAuth';
+import { userImg } from '../../../../provider/ImageProvider';
 
 const HotelDetails = () => {
   const [openImageGallery, setOpenImageGallery] = useState(false);
@@ -23,15 +26,22 @@ const HotelDetails = () => {
   const [tabStatus, setTabStatus] = useState('rooms');
   const [selectedRoomDetails, setSelectedRoomDetails] = useState({});
   const { data } = useLoaderData();
-  const { hotelName, hotelType, location, nearby, couple, amenities, hotelImage, star, rooms, pricing, duration, onlinePayment, numberOfFloors, numberOfRooms, yearOfConstruction, description, _id } = data;
+  const { user } = useAuth();
+  const { hotelName, location, nearby, amenities, hotelImage, star, rooms, numberOfFloors, numberOfRooms, yearOfConstruction, description, _id } = data;
+
+  const bookkingData = new URLSearchParams(window.location.search);
+  const chackIn = bookkingData.get('chackIn');
+  const chackOut = bookkingData.get('chackOut');
+  const roomCount = bookkingData.get('room');
+  const adults = bookkingData.get('adults');
+  const children = bookkingData.get('children');
+  
 
   const handleShoeRoomDetails = (id) => {
     const selectedRoom = rooms.find(room => room._id === id);
     setSelectedRoomDetails(selectedRoom);
     setOpenRoomDetails(true);
   }
-
-
 
 
   useEffect(() => {
@@ -142,7 +152,7 @@ const HotelDetails = () => {
 
       <div className='h-screen lg:flex mt-3'>
 
-        <div className='lg:w-[75%] lg:p-2'>
+        <div className='lg:w-[100%] lg:p-2'>
           <div>
             <h2 className='text-xl font-bodyTextFontRaleway font-semibold text-Headings'>Amenities</h2>
             <div className=''>
@@ -200,32 +210,53 @@ const HotelDetails = () => {
 
           <div className='mt-7 w-full  shadow-primaryShadow p-2'>
             <ul className='flex items-center gap-6'>
-              <li onClick={() => setTabStatus('rooms')} className={`text-lg font-bold font-bodyTextFontRaleway relative cursor-pointer ${tabStatus === 'rooms' && "after:content-[''] after:w-10 after:h-[3px] after:bg-Headings after:absolute after:top-full after:left-2"}`}>Rooms</li>
+              <li onClick={() => setTabStatus('rooms')} className={`text-lg text-gray-800 font-semibold font-bodyTextFontRaleway relative cursor-pointer ${tabStatus === 'rooms' && "after:content-[''] after:w-10 after:h-[3px] after:bg-Headings after:absolute after:top-full after:left-2"}`}>Rooms</li>
 
-              <li onClick={() => setTabStatus('review')} className={`text-lg font-bold font-bodyTextFontRaleway relative cursor-pointer ${tabStatus === 'review' && "after:content-[''] after:w-10 after:h-[3px] after:bg-Headings after:absolute after:top-full after:left-2"}`}>Review</li>
+              <li onClick={() => setTabStatus('review')} className={`text-lg text-gray-800 font-semibold font-bodyTextFontRaleway relative cursor-pointer ${tabStatus === 'review' && "after:content-[''] after:w-10 after:h-[3px] after:bg-Headings after:absolute after:top-full after:left-2"}`}>Review</li>
 
             </ul>
             <hr className='border-black' />
 
 
             {tabStatus === 'rooms' && <div>
-              {rooms?.map((room, i) => <Room key={i} room={room} handleShoeRoomDetails={handleShoeRoomDetails} />)}
+              {rooms?.map((room, i) => <Room key={i} room={room} handleShoeRoomDetails={handleShoeRoomDetails} hotelId={_id} bookingDate={{
+                start: chackIn,
+                end: chackOut,
+                room:roomCount ,
+                adults,
+                children
+              }} />)}
             </div>}
             {openRoomDetails && <RoomDetails roomData={selectedRoomDetails} setOpenRoomDetails={setOpenRoomDetails} setPrevScrollY={setPrevScrollY} />}
 
             {tabStatus === 'review' && <div>
-              review
+              <div className='max-h-[500px] overflow-auto mt-2'>
+                <HotelReview hotelReviews={''} />
+              </div>
+
+              <div className='w-full h-14 shadow-primaryShadow flex items-center justify-between gap-2 rounded-xl'>
+                <Link to={'/profile'}><img  className='w-10 h-10 rounded-full ml-1' src={user?.avatar || userImg} alt="" /></Link>
+                <div className='flex items-center bg-[#aaaaaa4b] rounded-lg w-full p-1'>
+                  <button  className='bg-gray-300 w-10 h-10 rounded-full text-3xl text-gray-500'  onClick={() => document.getElementById('fileInput').click()}>
+                    <span>+</span>
+                  </button>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    style={{ display: 'none' }}
+                  // onChange={handleFileChange}
+                  />
+                  <input className='w-full h-10 bg-transparent outline-none pl-2' type="text" name="" id="" placeholder='Add a review'/>
+                </div>
+
+                <button className='bg-primaryColor w-20 mr-2 h-10 rounded-lg text-white font-medium font-Inconsolata text-xl'>Add</button>
+              </div>
             </div>}
 
           </div>
         </div>
 
-        <div className='lg:w-[25%] bg-emerald-50 hidden lg:block'>
-          2
-        </div>
-        <div className='lg:w-[25%] bg-emerald-50 lg:hidden'>
-          2
-        </div>
+        
 
       </div>
 

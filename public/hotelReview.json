@@ -1,0 +1,63 @@
+[
+  {
+    "userName": "John Doe",
+    "userEmail": "john.doe@example.com",
+    "hotelId": "H12345",
+    "rating": 5,
+    "comment": "Amazing hotel with great service!",
+    "images": [
+      "https://example.com/image1.jpg",
+      "https://example.com/image2.jpg"
+    ],
+    "createdAt": "2025-02-24T10:00:00.000Z",
+    "updatedAt": "2025-02-24T10:00:00.000Z"
+  },
+  {
+    "userName": "Alice Smith",
+    "userEmail": "alice.smith@example.com",
+    "hotelId": "H67890",
+    "rating": 4,
+    "comment": "Very comfortable stay, but breakfast could be better.",
+    "images": [
+      "https://example.com/hotel-room.jpg"
+    ],
+    "createdAt": "2025-02-24T12:30:00.000Z",
+    "updatedAt": "2025-02-24T12:30:00.000Z"
+  },
+  {
+    "userName": "Michael Johnson",
+    "userEmail": "michael.j@example.com",
+    "hotelId": "H11111",
+    "rating": 3,
+    "comment": "Decent place, but the room was smaller than expected.",
+    "images": [],
+    "createdAt": "2025-02-23T15:45:00.000Z",
+    "updatedAt": "2025-02-23T15:45:00.000Z"
+  },
+  {
+    "userName": "Sophia Brown",
+    "userEmail": "sophia.b@example.com",
+    "hotelId": "H54321",
+    "rating": 5,
+    "comment": "Absolutely loved the spa and pool area! Highly recommended.",
+    "images": [
+      "https://example.com/spa.jpg",
+      "https://example.com/pool.jpg",
+      "https://example.com/hotel-lobby.jpg"
+    ],
+    "createdAt": "2025-02-22T08:15:00.000Z",
+    "updatedAt": "2025-02-22T08:15:00.000Z"
+  },
+  {
+    "userName": "David Wilson",
+    "userEmail": "david.w@example.com",
+    "hotelId": "H99999",
+    "rating": 2,
+    "comment": "Not worth the price. The staff was rude, and the room was not clean.",
+    "images": [
+      "https://example.com/damaged-room.jpg"
+    ],
+    "createdAt": "2025-02-21T18:20:00.000Z",
+    "updatedAt": "2025-02-21T18:20:00.000Z"
+  }
+]

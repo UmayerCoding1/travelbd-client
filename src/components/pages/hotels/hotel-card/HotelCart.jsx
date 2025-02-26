@@ -4,7 +4,7 @@ import { CloseIcon, LocationIcon, RightArrowIcon, SelectIcon } from '../../../..
 import Favorite from '../../../shared/favorite/Favorite';
 import { Link } from 'react-router';
 // import './ho.css'
-const HotelCart = ({ hotel }) => {
+const HotelCart = ({ hotel,searchdata }) => {
   const { hotelName, hotelType, location, nearby, couple, amenities, hotelImage, star, rooms, pricing, duration, onlinePayment, _id } = hotel;
   const { discount, price, texes } = pricing;
   const discountAmount = parseInt((price * discount) / 100);
@@ -56,7 +56,7 @@ const HotelCart = ({ hotel }) => {
               <p className='text-xs'>Total taxes: BTD {texes}</p>
 
 
-             <Link to={`/to/hotel/${_id}/hotel-deatils`}>
+             <Link to={`/to/hotel/${_id}/hotel-deatils?bookingInfo=${searchdata}`}>
               <div>
                 <button className=' bg-primaryColor text-white mt-2 rounded-lg text-[13px] font-medium w-44 h-10  flex items-center justify-center gap-1 p-1'>Check Availability <RightArrowIcon /></button>
               </div>

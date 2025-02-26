@@ -5,16 +5,19 @@ import SignIn from "../components/pages/sign-in/SignIn";
 import SignUp from "../components/pages/sign-up/SignUp";
 import Profile from "../components/pages/user/profile/Profile";
 import PrivetRoute from "./PrivetRoute";
-import DestinationDetails from "../components/shared/destinatinDetails/DestinationDetails";
 import Destinations from "../components/pages/destinatons/destinations";
 import Hotels from "../components/pages/hotels/Hotels";
 import HotelDetails from "../components/pages/hotels/hotel-details/HotelDetails";
+// import HotelBooking from "../components/pages/hotels/hotel-booking/HotelBooking";
+import DestinationDetails from "../components/pages/destinatons/destinatinDetails/DestinationDetails";
+import Booking from "../components/pages/booking/Booking";
+import Error from "../components/shared/error/Error";
 
 const render = createBrowserRouter([
     {
         path: '/',
         element: <Root/>,
-        errorElement: <Error/>,
+        // errorElement: <Error/>,
         children:[
             {
                 path: '/',
@@ -39,6 +42,10 @@ const render = createBrowserRouter([
                 element: <HotelDetails/>,
                 loader: async ({params}) => await fetch(`${import.meta.env.VITE_API_ENDPOINT_PRODUCTION}/HOTEL/${params.id}`)
             },
+            {
+                path: ':type/booking',
+                element:<Booking/>
+            },
 
 
 
@@ -52,7 +59,8 @@ const render = createBrowserRouter([
     },
     // auth related
     {path: '/sign-in', element:<SignIn/>},
-    {path: '/sign-up', element:<SignUp/>}
+    {path: '/sign-up', element:<SignUp/>},
+    
     
 ])
 
