@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import {  useLocation } from 'react-router';
+import { useLocation } from 'react-router';
+import UsePublicApiEndpoint from '../../../../hooks/usePublicApiEndpoint';
+import useAuth from '../../../../hooks/useAuth';
 
 
 const HotelBooking = ({ hotels }) => {
+  const [loading, setLoading] = useState(false);
   const { state } = useLocation();
   const { hotelId, roomName, chackIn, chackOut, room, adults, children } = state;
-  const selectedHotel = hotels?.find(hotel => hotel._id === hotelId && hotelId);
+  const selectedHotel = hotels?.find(hotel => hotel?._id === hotelId && hotelId);
   const selectedRoom = selectedHotel?.rooms?.find(room => room.title === roomName);
   const adultsFields = Array.from({ length: parseInt(adults) }, (_, index) => index + 1);
   const childrenFiled = Array.from({ length: parseInt(children) }, (_, index) => index + 1);
   const adultsCount = parseInt(adults);
   const childrenCount = parseInt(children);
-  
+  const publicApiEndPoint = UsePublicApiEndpoint();
+  const { user } = useAuth();
+
 
   const createDate = (date) => {
     const [day, month, year] = date.split("-").map(Number);
@@ -31,7 +36,7 @@ const HotelBooking = ({ hotels }) => {
   const checkInDate = (createDate(chackIn));
   const checkOutDate = (createDate(chackOut));
   const night = calculateNight(checkInDate, checkOutDate);
-
+  console.log(checkOutDate.toString().split('G')[0]);
 
   const formattedCheckInDate = new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -44,26 +49,51 @@ const HotelBooking = ({ hotels }) => {
     year: "numeric"
   }).format(checkOutDate);
 
-  const [formData, setFormData] = useState({
+  const [guestDetails, setGuestDetails] = useState({
     adults: Array.from({ length: adultsCount }, () => ({ name: "", contact: "" })),
     children: Array.from({ length: childrenCount }, () => ({ name: "", age: "" }))
   });
 
-  console.log(selectedRoom);
+
   const handleInputValue = (index, type, filedName, value) => {
-    setFormData((prev) => {
+    setGuestDetails((prev) => {
       const updateedData = { ...prev };
       updateedData[type][index] = { ...updateedData[type][index], [filedName]: value };
       return updateedData;
     })
   }
 
-  const handleBookingSubmit = (e) => {
+  const handleBookingSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const number = form.contact_number.value;
     
-
-    
-    console.log(Object.values(formData));
+    const orderDetails = {
+      cusName: user?.fullName,
+      cusEmail: user?.email || email,
+      cusNumber: user?.emergency_contact || number,
+      amount: parseInt(((room * night) * selectedRoom?.price) - ((selectedRoom?.price * selectedRoom?.discount) / 100) + selectedRoom?.texes),
+      discount: selectedRoom?.discount,
+      hotelId,
+      roomName: selectedRoom?.title,
+      bookingDetails: {
+        chechIn: checkInDate,
+        chechOut: checkOutDate,
+        room: room,
+        adults,
+        children
+      },
+      guestDetails,
+      paymentStatus: 'pending'
+    }
+    setLoading(true);
+    const response = await publicApiEndPoint.post('/booking-payment', orderDetails)
+    if (response.data.url) {
+      setLoading(false)
+      window.location.replace(response.data.url)
+    }
+    console.log(Object.values(orderDetails));
   }
   return (
     <div className=''>
@@ -138,14 +168,45 @@ const HotelBooking = ({ hotels }) => {
               ))}
             </div>
 
+            <div className='mb-3 shadow-primaryShadow rounded-lg p-2'>
+              <h2 className='text-xl font-bodyTextFontLato font-semibold'>Primary Contact</h2>
+              <p className='text-xs mb-2'>
+                Please enter the contact details of the person who would like to receive the confirmation and be contacted if required.
+              </p>
+
+              <div className='lg:flex items-start w-full gap-2'>
+                <div className='w-full lg:w-1/2'>
+                  <label className='text-xs font-bold my-2' htmlFor="email">Email</label> <br />
+                  <input
+                    type="email"
+                    name="email"
+                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                    defaultValue={user?.email || ''}
+                    required
+                  />
+                </div>
+
+                <div className='w-full lg:w-1/2'>
+                  <label className='text-xs font-bold my-2' htmlFor="number">Mobile Number</label> <br />
+                  <input
+                    type="text"
+                    name="contact_number"
+                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                    defaultValue={user?.emergency_contact || ''}
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
 
             <div>
               <div className='hidden lg:block'>
-                <button className='w-full bg-primaryColor h-10 rounded-lg text-xs font-semibold text-white '>Confirm Booking</button>
+                <button className='w-full bg-primaryColor h-10 rounded-lg text-xs font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
               </div>
 
               <div className='lg:hidden fixed left-0 bottom-0 w-full '>
-                <button className='w-full bg-primaryColor h-10  text-xs font-semibold text-white '>Confirm Booking</button>
+                <button className='w-full bg-primaryColor h-10  text-xs font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
               </div>
             </div>
 
@@ -214,11 +275,11 @@ const HotelBooking = ({ hotels }) => {
               </p>
 
               <p className='text-[15px]'>
-                 <span className='font-medium '>+ BTD </span>
+                <span className='font-medium '>+ BTD </span>
                 <span className='text-gray-600'>{selectedRoom?.texes.toLocaleString()}</span>
               </p>
             </div>
-            <hr className='mt-2'/>
+            <hr className='mt-2' />
 
             <div className='p-2 flex items-center justify-between bg-Headings text-white '>
               <p className='font-medium'>

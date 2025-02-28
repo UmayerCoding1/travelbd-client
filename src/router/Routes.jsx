@@ -12,6 +12,7 @@ import HotelDetails from "../components/pages/hotels/hotel-details/HotelDetails"
 import DestinationDetails from "../components/pages/destinatons/destinatinDetails/DestinationDetails";
 import Booking from "../components/pages/booking/Booking";
 import Error from "../components/shared/error/Error";
+import MyBooking from "../components/pages/user/my-booking/MyBooking";
 
 const render = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const render = createBrowserRouter([
             },
             {
                 path: ':type/booking',
-                element:<Booking/>
+                element:<PrivetRoute><Booking/></PrivetRoute>
             },
 
 
@@ -53,6 +54,10 @@ const render = createBrowserRouter([
             {
                 path:"/profile",
                 element: <PrivetRoute><Profile/></PrivetRoute>
+            },
+            {
+                path:'/my-booking',
+                element:<MyBooking/>
             }
             
         ]

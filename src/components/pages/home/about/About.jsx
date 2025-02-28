@@ -60,19 +60,19 @@ const About = () => {
 
             <div className='lg:grid gap-2 grid-cols-3 m-5 lg:m-16 lg:mt-10 transition-all ease-in-out duration-300'>
                 <div data-aos="flip-up" className='bg-[#E7E7E7] w-full h-52 flex flex-col items-center justify-center rounded-lg hover:shadow-lg hover:bg-blue-500 hover:text-white transition-all ease-linear duration-300'>
-                    <h2 className='text-3xl font-semibold  transition-colors duration-300'><NumberCount target={571} duration={1000} /></h2>
+                    <h2 className='text-3xl font-semibold  transition-colors duration-300'><NumberCount target={571} duration={3000} /></h2>
                     <p className='transition-colors duration-300'>our explorers</p>
                 </div>
 
                 <div data-aos="flip-up" className="bg-[#E7E7E7] w-full h-52 flex flex-col items-center justify-center rounded-lg hover:shadow-lg hover:bg-blue-500 hover:text-white transition-all ease-in-out duration-300 my-5 lg:my-0">
                     <h2 className="text-3xl font-semibold transition-colors duration-300">
-                        <NumberCount target={100} duration={1000} />
+                        <NumberCount target={100} duration={3000} />
                     </h2>
                     <p className="transition-colors duration-300">Destination</p>
                 </div>
 
                 <div data-aos="flip-up" className='bg-[#E7E7E7] mt-3 lg:mt-0  w-full h-52 flex flex-col items-center justify-center rounded-lg hover:shadow-lg hover:bg-blue-500 hover:text-white transition-all ease-linear duration-300'>
-                    <h2 className='text-3xl font-semibold transition-colors duration-300'><NumberCount target={5} duration={1000} /></h2>
+                    <h2 className='text-3xl font-semibold transition-colors duration-300'><NumberCount target={5} duration={3000} /></h2>
                     <p className='transition-colors duration-300'>Year’s experience</p>
                 </div>
             </div>

@@ -16,7 +16,7 @@ const Room = ({ room, handleShoeRoomDetails,hotelId,bookingDate }) => {
 
   const handleSelectRoom = (id) => {
     if (!user) {
-      navigate('/sign-in', {state: {form: '/hotel'}})
+     return navigate('/sign-in', {state: {form: '/'}})
     }   
     navigate('/hotel/booking?hotel=174$174noHotel&room=174$174noRoom&chackIn=#-#-#&chackOut=#-#-#&room=x&adults=x&children=x',{
       state: {hotelId,roomName: title,chackIn: bookingDate.start, chackOut: bookingDate.end,room:bookingDate.room,adults: bookingDate.adults, children:bookingDate.children },

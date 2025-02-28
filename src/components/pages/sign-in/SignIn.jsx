@@ -11,7 +11,7 @@ const SignIn = () => {
     const {loginUser,setUser,setLoading} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const navigateForm = location.state?.form;
+    const navigateForm = location.state?.form || '/';
     const publicApiEndPoint = UsePublicApiEndpoint();
     
     console.log(location);

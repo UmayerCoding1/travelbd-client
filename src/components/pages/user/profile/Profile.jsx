@@ -103,7 +103,7 @@ console.log(avatarImage);
         
     }
     return (
-        <div className='  lg:p-20 pt-5 lg:grid grid-cols-4 gap-6'>
+        <div className='  lg:p-20 pt-5 lg:grid grid-cols-4 gap-6 max-w-6xl mx-auto'>
             <Helmet><title>{user ? `${user.fullName} profile` : 'Profile'} | Travel BD</title></Helmet>
             <div className='bg-white shadow-lg w-full mb-5 lg:h-[52vh] col-span-1 p-1 pr-1 pt-2 '>
                 <div className='w-full flex items-center justify-between lg:justify-start  lg:gap-5'>
