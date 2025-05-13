@@ -25,13 +25,13 @@ const About = () => {
 
                         <div className='lg:flex gap-4'>
                             <h1 className='text-5xl lg:text-6xl font-bold  lg:w-[70%]' >We  Recommend</h1>
-                            <p className='lg:w-[28%] text-xs mt-4 lg:mt-0'>Let’s  chose your dream destination here we  provide many destination and we offer the bast
+                            <p className='lg:w-[28%] text-sm mt-4 lg:mt-0'>Let’s  chose your dream destination here we  provide many destination and we offer the bast
                                 destination every  week.</p>
                         </div>
                         <h1 className='text-6xl font-bold my-6'>Beautiful Destinations</h1>
                         <div className='lg:flex gap-4'>
                             <h1 className='text-6xl font-bold lg:w-[60%]' >Every Month</h1>
-                            <p className='lg:w-[50%] text-xs mt-4 lg:mt-0'>Let’s  chose your dream destination here we  provide many destination and we offer the bast
+                            <p className='lg:w-[50%] text-sm mt-4 lg:mt-0'>Let’s  chose your dream destination here we  provide many destination and we offer the bast
                                 destination every  week.</p>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ const About = () => {
             <div className='lg:flex  gap-5 mt-2'>
                 <div className='bg-gray-50 h-24 rounded-xl lg:w-[35%] my-4 lg:mt-0 flex items-center justify-center gap-2'>
                     <p className=' text-3xl font-bold text-blue-500'>25% OFF</p>
-                    <p className='text-xs text-gray-500'>Till 01 February, <br /> 2025</p>
+                    <p className='text-sm text-gray-500'>Till 01 February, <br /> 2025</p>
                 </div>
 
                 <div className='bg-gray-100 h-24 rounded-xl lg:w-[65%] my-4 lg:mt-0 flex items-center justify-center relative' >

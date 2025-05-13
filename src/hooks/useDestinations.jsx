@@ -1,16 +1,17 @@
-import React from 'react';
-import { useQuery } from 'react-query';
+
+import { useQuery } from '@tanstack/react-query';
 import UsePublicApiEndpoint from './usePublicApiEndpoint';
 
-const useDestinations = (filterValue) => {
+const useDestinations = (filterValue,locationName) => {
     const publicApiEndPoint = UsePublicApiEndpoint();
     const {data: destinations = []} = useQuery({
-        queryKey: ['destinations'],
+        queryKey: ['destinations',filterValue,locationName],
         queryFn: async () => {
-            const response = await publicApiEndPoint.get('/destinations');
+            const response = await publicApiEndPoint.get(`/destinations?location=${locationName}`);
             return response.data.data;
         }
     })
+ 
     
     
     return [destinations];

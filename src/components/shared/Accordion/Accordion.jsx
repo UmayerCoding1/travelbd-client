@@ -4,7 +4,7 @@ import { OptionIcon } from '../../../provider/IconProvider';
 
 const Accordion = ({data}) => {
     const [activeId,setActiveId] = useState(false);
-    // console.log(data);
+
     const {_id,title,tourLocation,Offer,requirement,image,rating,option, ...accordionData} =  data;
     const modifiedPackageArray = Object.entries(accordionData).map(([key, value], index) => ({
         index: index + 1,  

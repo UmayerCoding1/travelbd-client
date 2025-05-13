@@ -16,7 +16,7 @@ const HotelReview = () => {
                 <img className='w-14 h-14 rounded-full ' src={userAvatar || userImg} alt="" />
                 <div>
                   <h2 className='lg:text-lg font-medium text-Headings'>{userName}</h2>
-                  <p className='text-xs text-gray-500 font-medium'>{new Date(createdAt || new Date).toISOString().split('T')[0]}</p>
+                  <p className='text-sm text-gray-500 font-medium'>{new Date(createdAt || new Date).toISOString().split('T')[0]}</p>
                 </div>
               </div>
               <div>

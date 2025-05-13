@@ -21,20 +21,11 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background:#fff;
 }
 
-a.active {
-  /* color: #F0721D; */
-  background-image: linear-gradient(to right, green, red);
-  background-clip: text;
-  color: transparent;
-}
 
-a.active:hover {
-  background-image: linear-gradient(to right, green, red);
-  background-clip: text;
-  color: transparent;
-}
+
 
 a.active svg {
   color: green;
@@ -74,4 +65,8 @@ a.active svg {
   object-fit: cover;
 }
 
+
+input,textarea{
+  background-color: #fff;
+}
 

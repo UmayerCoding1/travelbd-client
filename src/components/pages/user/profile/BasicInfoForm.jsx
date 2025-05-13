@@ -64,7 +64,7 @@ const BasicInfoForm = ({ action }) => {
           emergency_contact : data.number
         }
 
-        console.log(basicInfoData);
+     
         
 
          try {
@@ -127,9 +127,9 @@ const BasicInfoForm = ({ action }) => {
             <form className='mt-3' onSubmit={handleUpdateInfo}>
                 <section className='lg:flex w-full gap-2  mb-5'>
                   <div className='w-full lg:w-1/2'>
-                      <label className='text-xs text-gray-700' htmlFor="full-name">First Name</label> <br />
+                      <label className='text-sm text-gray-700' htmlFor="full-name">First Name</label> <br />
                       <input
-                        className='border border-gray-500 rounded-md w-full h-10 text-xs pl-2 outline-none'
+                        className='border border-gray-500 rounded-md w-full h-10 text-sm pl-2 outline-none'
                         type="text"
                         // defaultValue={fullName ? fullName.split(' ')[0] : ''}
                         defaultValue={fullName.split(' ')[0] || ''}
@@ -140,9 +140,9 @@ const BasicInfoForm = ({ action }) => {
                   </div>
 
                   <div className='w-full lg:w-1/2'>
-                      <label className='text-xs text-gray-700' htmlFor="last name">Last Name</label> <br />
+                      <label className='text-sm text-gray-700' htmlFor="last name">Last Name</label> <br />
                       <input
-                        className='border border-gray-500 rounded-md w-full h-10 text-xs pl-2 outline-none'
+                        className='border border-gray-500 rounded-md w-full h-10 text-sm pl-2 outline-none'
                         type="text"
                         defaultValue={fullName.split(' ')[1] || ''}
                         {...register('lastName')}
@@ -153,7 +153,7 @@ const BasicInfoForm = ({ action }) => {
 
                 <section className='lg:flex w-full gap-2 items-center mb-5'>
                   <div className='w-full lg:w-1/2'>
-                      <label className='text-xs text-gray-700 pl-3' htmlFor="Date of Birth">Date of Birth</label> <br />
+                      <label className='text-sm text-gray-700 pl-3' htmlFor="Date of Birth">Date of Birth</label> <br />
                       
                       <DataPicker defaultValue={date_of_Birth} storeDOB={setDOB}/>
                       
@@ -161,9 +161,9 @@ const BasicInfoForm = ({ action }) => {
                
 
                   <div className='w-full lg:w-1/2'>
-                      <label className='text-xs text-gray-700' htmlFor="National ID">National ID</label> <br />
+                      <label className='text-sm text-gray-700' htmlFor="National ID">National ID</label> <br />
                       <input
-                        className='border border-gray-500 rounded-md w-full h-10 text-xs pl-2 outline-none'
+                        className='border border-gray-500 rounded-md w-full h-10 text-sm pl-2 outline-none'
                         type="number"
                         defaultValue={nationalID}
                         {...register('nationalID')}
@@ -174,11 +174,11 @@ const BasicInfoForm = ({ action }) => {
 
                 <section className='lg:flex items-center gap-2 mb-5'>
                   <div className='w-full lg:w-1/2 relative ' ref={hideGenderRef}>
-                  <label className='text-xs text-gray-700' htmlFor="gender">Gender</label>
+                  <label className='text-sm text-gray-700' htmlFor="gender">Gender</label>
                     <div onClick={(e) => {
                       e.stopPropagation();
                       setShowGender(!showGender)
-                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-xs transition-all duration-300 ease-in-out '>
+                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-sm transition-all duration-300 ease-in-out '>
                       
                        <p className=''>{ selectGenderText}</p>
                        {showGender ? <CloseIcon className='text-lg mr-1'/> : <DownIcon className='text-lg mr-1'/>}
@@ -189,17 +189,17 @@ const BasicInfoForm = ({ action }) => {
                           setShowGender(!showGender);
                           setSelectGenderText(item)
                          }}
-                          className='text-xs p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
+                          className='text-sm p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
                     </div> : ''}
                     
                    </div>
 
                    <div className='w-full lg:w-1/2 relative ' ref={hideMSRef}>
-                   <label className='text-xs text-gray-700 ' htmlFor="Marital Status">Marital Status</label>
+                   <label className='text-sm text-gray-700 ' htmlFor="Marital Status">Marital Status</label>
                     <div onClick={(e) => {
                       e.stopPropagation();
                       setShowMS(!showMS);
-                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-xs transition-all duration-300 ease-in-out '>
+                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-sm transition-all duration-300 ease-in-out '>
                        <p className=''>{mSText}</p>
                        {showMS ? <CloseIcon className='text-lg mr-1'/> : <DownIcon className='text-lg mr-1'/>}
                     </div>
@@ -209,7 +209,7 @@ const BasicInfoForm = ({ action }) => {
                           setShowMS(!showMS);
                           setMSText(item)
                          }}
-                          className='text-xs p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
+                          className='text-sm p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
                     </div> : ''}
                     
                    </div>
@@ -218,11 +218,11 @@ const BasicInfoForm = ({ action }) => {
 
                 <section className='lg:flex items-center gap-2'>
                   <div className='w-full lg:w-1/2 relative ' ref={hideReligionRef}>
-                  <label className='text-xs text-gray-700' htmlFor="gender">Religion</label>
+                  <label className='text-sm text-gray-700' htmlFor="gender">Religion</label>
                     <div onClick={(e) => {
                       e.stopPropagation();
                       setShowReligion(!showReligion)
-                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-xs transition-all duration-300 ease-in-out '>
+                    }} className='w-full h-10 flex items-center justify-between cursor-pointer border border-gray-500 outline-none rounded-md pl-2 text-sm transition-all duration-300 ease-in-out '>
                        <p className=''>{selectReligionText}</p>
                        {showGender ? <CloseIcon className='text-lg mr-1'/> : <DownIcon className='text-lg mr-1'/>}
                     </div>
@@ -232,16 +232,16 @@ const BasicInfoForm = ({ action }) => {
                           setShowReligion(!showReligion);
                           setSelectReligionText(item)
                          }}
-                          className='text-xs p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
+                          className='text-sm p-2  m-1 mt-1 rounded-lg cursor-pointer hover:bg-[#E1F2F8] transition-all duration-200 ease-in'>{item}</p>)}
                     </div> : ''}
 
                     
                    </div>
 
                    <div className='w-full lg:w-1/2'>
-                      <label className='text-xs text-gray-700' htmlFor="Emergency Contact">Emergency Contact(Number)</label> <br />
+                      <label className='text-sm text-gray-700' htmlFor="Emergency Contact">Emergency Contact(Number)</label> <br />
                       <input
-                        className='border border-gray-500 rounded-md w-full h-10 text-xs pl-2 outline-none'
+                        className='border border-gray-500 rounded-md w-full h-10 text-sm pl-2 outline-none'
                         type="number"
                         placeholder='01XXXXXXXXX'
                         defaultValue={emergency_contact}

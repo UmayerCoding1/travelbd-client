@@ -39,11 +39,10 @@ const Profile = () => {
         const formData = new FormData();
         formData.append('avatar', avatarImage);
         setLoading(true);
-console.log(avatarImage);
 
         const response = await secureApiEndPoint.put('/update-avatar', formData);
         if (response.data.data) {
-            console.log(response.data.data);
+          
             updateSetUser(response.data.data)
             toast.success(response.data.message);
             setLoading(false)
@@ -111,7 +110,7 @@ console.log(avatarImage);
                         :
                         <button className='bg-[#E1F2F8] border border-blue-900 cursor-default w-28 h-28 rounded-full flex items-center justify-center'><ProfileIcon className='text-5xl text-[#51B5D7]' /></button>}
 
-                    {loading ? <p className='text-xs text-gray-500'>Avatar image update...</p>
+                    {loading ? <p className='text-sm text-gray-500'>Avatar image update...</p>
                         :
                         <div className="flex items-center gap-2 relative">
                             <label
@@ -136,8 +135,8 @@ console.log(avatarImage);
                 </div>
 
                 <ul className='mt-4'>
-                    <li><NavLink className={`${liStyle}`} to={'/my-booking'}><BookingIcon /> <span className='text-xs'>My Booking</span></NavLink></li>
-                    <li><NavLink className={`${liStyle}`} to={'/Saved'}><HeartICon /> <span className='text-xs'>Saved</span></NavLink></li>
+                    <li><NavLink className={`${liStyle}`} to={'/my-booking'}><BookingIcon /> <span className='text-sm'>My Booking</span></NavLink></li>
+                    <li><NavLink className={`${liStyle}`} to={'/Saved'}><HeartICon /> <span className='text-sm'>Saved</span></NavLink></li>
                     <li onClick={() => {
                     setIsLoading(true);
                     setTimeout(() => {
@@ -145,7 +144,7 @@ console.log(avatarImage);
                         setIsLoading(false);
                         setChangePassword(false)
                     },2000)
-                 }} className={`${liStyle}`}><KeyIcon /> <span className='text-xs'>Change Password</span></li>
+                 }} className={`${liStyle}`}><KeyIcon /> <span className='text-sm'>Change Password</span></li>
                  {isLoading && <div className='w-full h-screen bg-black/50 absolute left-0 top-0 z-10 flex items-center justify-center'>
                        <Loading/>
                     </div>}
@@ -160,31 +159,31 @@ console.log(avatarImage);
                                              
                                         {changedPassword ?  <div className='flex flex-col items-center justify-evenly h-full'>
                                             <button className='text-9xl text-emerald-500'><SelectIcon/></button>
-                                            <button onClick={() => setShowChangePassword(false)} className='w-full h-10 bg-emerald-500  rounded-lg text-xs font-bold text-white' type='button'>Back</button>
+                                            <button onClick={() => setShowChangePassword(false)} className='w-full h-10 bg-emerald-500  rounded-lg text-sm font-bold text-white' type='button'>Back</button>
                                         </div>
                                         :
                                            <form onSubmit={handleChangePassword} className='mt-5 p-5'>
                                                <div className='mb-3'>
-                                                   <label className='text-xs pl-1 font-semibold' htmlFor="old-pass">Email</label>
-                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-xs pl-2' type="email" name="email" placeholder='Type hear...' required/>
+                                                   <label className='text-sm pl-1 font-semibold' htmlFor="old-pass">Email</label>
+                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-sm pl-2' type="email" name="email" placeholder='Type hear...' required/>
                                                </div>
                                                <div className='mb-3'>
-                                                   <label className='text-xs pl-1 font-semibold' htmlFor="old-pass">Old password</label>
-                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-xs pl-2' type="password" name="oldPassword" placeholder='Type hear...' required/>
+                                                   <label className='text-sm pl-1 font-semibold' htmlFor="old-pass">Old password</label>
+                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-sm pl-2' type="password" name="oldPassword" placeholder='Type hear...' required/>
                                                </div>
                                                <div className='mb-3'>
-                                                   <label className='text-xs pl-1 font-semibold' htmlFor="new-pass">New password</label>
-                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-xs pl-2' type="password" name="newPassword" placeholder='Type hear...' required/>
+                                                   <label className='text-sm pl-1 font-semibold' htmlFor="new-pass">New password</label>
+                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-sm pl-2' type="password" name="newPassword" placeholder='Type hear...' required/>
                                                </div>
                                                <div className='mb-3'>
-                                                   <label className='text-xs pl-1 font-semibold' htmlFor="Retype -new-pass">Retype new password</label>
-                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-xs pl-2' type="password" name="retypeNewPassword" placeholder='Type hear...' required/>
+                                                   <label className='text-sm pl-1 font-semibold' htmlFor="Retype -new-pass">Retype new password</label>
+                                                   <input className='w-full h-10 outline-none bg-gray-100 rounded-lg text-sm pl-2' type="password" name="retypeNewPassword" placeholder='Type hear...' required/>
                                                   
                                                </div>
 
-                                               {changedPassword ? <button className='w-full h-10 bg-emerald-500  rounded-lg text-xs font-bold text-white' type='button'>Back</button>
+                                               {changedPassword ? <button className='w-full h-10 bg-emerald-500  rounded-lg text-sm font-bold text-white' type='button'>Back</button>
                                                  :
-                                                 <button className='w-full h-10 bg-blue-500 rounded-lg text-xs font-bold text-white' type='submit'>Update password</button>
+                                                 <button className='w-full h-10 bg-blue-500 rounded-lg text-sm font-bold text-white' type='submit'>Update password</button>
                                                }
                                            </form>
 }
@@ -196,7 +195,7 @@ console.log(avatarImage);
 
 
 
-                    <Logout style={'flex items-center gap-2 text-xs font-semibold  p-3 rounded-lg hover:bg-red-50 text-red-500'} />
+                    <Logout style={'flex items-center gap-2 text-sm font-semibold  p-3 rounded-lg hover:bg-red-50 text-red-500'} />
                 </ul>
 
 

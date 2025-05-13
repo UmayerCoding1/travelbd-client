@@ -83,7 +83,7 @@ const HotelDetails = () => {
             />
 
           </div>
-          <p className='flex items-center text-xs text-Headings/90 mt-2 font-medium'><LocationIcon /> {location}</p>
+          <p className='flex items-center text-sm text-Headings/90 mt-2 font-medium'><LocationIcon /> {location}</p>
         </div>
 
         {/* <div>
@@ -123,7 +123,7 @@ const HotelDetails = () => {
 
       {openImageGallery && <div className='w-full h-full bg-[#262626c3] absolute top-0 left-0 p-2 overflow-hidden'>
         <div className=''>
-          <h2 className=' text-white text-center'><span className='font-semibold uppercase'>Hotel</span> <br /> <span className='text-xs'>{hotelName}</span> </h2>
+          <h2 className=' text-white text-center'><span className='font-semibold uppercase'>Hotel</span> <br /> <span className='text-sm'>{hotelName}</span> </h2>
 
           <CloseIcon onClick={() => setOpenImageGallery(false)} className='text-3xl text-white cursor-pointer absolute top-2 right-3' />
         </div>
@@ -145,14 +145,14 @@ const HotelDetails = () => {
 
             <Favorite />
           </div>
-          <p className='flex items-center text-xs text-Headings/90 mt-2 font-medium'><LocationIcon /> {location}</p>
+          <p className='flex items-center text-sm text-Headings/90 mt-2 font-medium'><LocationIcon /> {location}</p>
         </div>
       </div>
 
 
       <div className='h-screen lg:flex mt-3'>
 
-        <div className='lg:w-[100%] lg:p-2'>
+        <div className='lg:w-[100%] lg:p-2 bg-white'>
           <div>
             <h2 className='text-xl font-bodyTextFontRaleway font-semibold text-Headings'>Amenities</h2>
             <div className=''>
@@ -161,7 +161,7 @@ const HotelDetails = () => {
                   <span className='text-2xl'>
                     {item === 'Air Conditioning' && <FaSnowflake /> || item === 'Check-In Check-Out' && <FaSignInAlt /> || item === 'Accessible Bathroom' && <FaBath /> || item === 'Elevator' && <GiElevator /> || item === 'Highchairs' && <MdChair />}
                   </span>
-                  <span className='text-xs'>{item}</span>
+                  <span className='text-sm'>{item}</span>
                 </span>
               </p>)}
             </div>
@@ -173,7 +173,7 @@ const HotelDetails = () => {
                 <h2 className='text-xl font-bodyTextFontRaleway font-semibold flex items-center gap-1 text-Headings'><FaTreeCity /> Surroundings</h2>
                 {nearby?.map((item, i) => <span key={i} className='flex items-center gap-1 my-2'>
                   <span><LocationIcon className='text-xl' /></span>
-                  <span className='text-xs text-gray-600'>{item}</span>
+                  <span className='text-sm text-gray-600'>{item}</span>
                 </span>)}
               </div>
 
@@ -185,7 +185,7 @@ const HotelDetails = () => {
                     Free parking
                     <span className=" group">
                       <InfoIcon className='cursor-pointer' />
-                      <span className='absolute text-xs bg-black w-[250px] px-2 h-10 text-white text-center  items-center justify-cente  hidden group-hover:flex'>You can park at this property for free</span>
+                      <span className='absolute text-sm bg-black w-[250px] px-2 h-10 text-white text-center  items-center justify-cente  hidden group-hover:flex'>You can park at this property for free</span>
                     </span>
                   </p>
 
@@ -203,12 +203,12 @@ const HotelDetails = () => {
                 <h2 className='text-lg font-medium'>Number of Rooms : {numberOfRooms}</h2>
                 <h2 className='text-lg font-medium'> Year of construction : {yearOfConstruction}</h2>
               </div>
-              <p className={`${openDescription ? 'h-auto' : 'h-10'} mt-2 w-full  overflow-hidden text-xs leading-relaxed font-bodyTextFontRaleway font-medium `}>{description}</p>
-              <button onClick={() => setOpenDescription(!openDescription)} className='text-xs text-blue-500 select-none cursor-pointer'>See {openDescription ? 'less' : 'more'}</button>
+              <p className={`${openDescription ? 'h-auto' : 'h-10'} mt-2 w-full  overflow-hidden text-sm leading-relaxed font-bodyTextFontRaleway font-medium `}>{description}</p>
+              <button onClick={() => setOpenDescription(!openDescription)} className='text-sm text-blue-500 select-none cursor-pointer'>See {openDescription ? 'less' : 'more'}</button>
             </div>
           </div>
 
-          <div className='mt-7 w-full  shadow-primaryShadow p-2'>
+          <div className='mt-7 w-full  shadow-primaryShadow p-2 bg-white'>
             <ul className='flex items-center gap-6'>
               <li onClick={() => setTabStatus('rooms')} className={`text-lg text-gray-800 font-semibold font-bodyTextFontRaleway relative cursor-pointer ${tabStatus === 'rooms' && "after:content-[''] after:w-10 after:h-[3px] after:bg-Headings after:absolute after:top-full after:left-2"}`}>Rooms</li>
 

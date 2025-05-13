@@ -42,9 +42,7 @@ const Hotels = () => {
     }
     document.addEventListener('click', handleOutsideClick);
 
-    fetch('hotel.json')
-    .then(res => res.json())
-    .then(data => console.log(data))
+    
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     }    

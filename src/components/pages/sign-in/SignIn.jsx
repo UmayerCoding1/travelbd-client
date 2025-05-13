@@ -13,8 +13,7 @@ const SignIn = () => {
     const location = useLocation();
     const navigateForm = location.state?.form || '/';
     const publicApiEndPoint = UsePublicApiEndpoint();
-    
-    console.log(location);
+   
     const handleSignIn = (e) => {
        e.preventDefault();
        const from = e.target;
@@ -60,13 +59,13 @@ const SignIn = () => {
                     
                 </div>
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >Email</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="email" name='email' placeholder='abc@gmail.com' autoComplete='email'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >Email</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="email" name='email' placeholder='abc@gmail.com' autoComplete='email'/>
                 </div>
 
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >Password</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="password" name='password' placeholder='type hear' autoComplete='current-password'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >Password</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="password" name='password' placeholder='type hear' autoComplete='current-password'/>
                 </div>
                  
 
@@ -74,9 +73,9 @@ const SignIn = () => {
               
 
                 <div>
-                    <button className='w-full h-10 rounded-lg mt-3 font-semibold bg-black text-white text-xs' type='submit'>Sign In</button>
+                    <button className='w-full h-10 rounded-lg mt-3 font-semibold bg-black text-white text-sm' type='submit'>Sign In</button>
                 </div>
-                <p className='text-xs mt-2 text-center font-semibold'> Create a new account? <Link to={'/sign-up'} className='link'>Sign Up</Link></p>
+                <p className='text-sm mt-2 text-center font-semibold'> Create a new account? <Link to={'/sign-up'} className='link'>Sign Up</Link></p>
              </form>
            </div>
            <Toaster position='top-center' reverseOrder={false}/>

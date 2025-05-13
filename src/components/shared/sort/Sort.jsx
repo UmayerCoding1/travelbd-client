@@ -20,7 +20,7 @@ const Sort = ({ sortSectionRef, setShowSortDropDown, showSortDropdown }) => {
       }} className='bg-white p-3 rounded-lg'>
         <div className='flex items-center gap-1 '>
           <LuArrowDownUp />
-          <p className='text-xs font-medium'>Stor by: {sortValue}</p>
+          <p className='text-sm font-medium'>Stor by: {sortValue}</p>
           {showSortDropdown ? <UpIcon/> : <DownIcon />}
         </div>
 
@@ -32,7 +32,7 @@ const Sort = ({ sortSectionRef, setShowSortDropDown, showSortDropdown }) => {
               setSortValue(item);
               setShowSortDropDown(false);
             }}
-            className={`flex items-center gap-2 text-xs font-medium p-3 mt-1 ${sortValue === item ? 'text-[#6f91c9]' : 'text-black'}`}
+            className={`flex items-center gap-2 text-sm font-medium p-3 mt-1 ${sortValue === item ? 'text-[#6f91c9]' : 'text-black'}`}
           >
             {item}
             <span><SelectIcon className={`${sortValue === item && 'text-emerald-500'}`} /></span>

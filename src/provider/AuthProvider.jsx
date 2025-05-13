@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
 
     await secureApiEndPoint.post('/logout')
       .then(res => {
-        console.log(res.data);
+       
         setUser(null)
         setLoading(false);
         localStorage.removeItem('accessToken')
@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
        const res =  await secureApiEndPoint.get('/refresh') // Fetch user data with refresh endpoint
        if (res.data.data) {
         setUser(res.data.data); // Set user data
-        console.log('currentUser', res.data.data);
+       
        }
 
       } catch (error) {
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
     }
 
     setTimeout(() => {
-      !user ? setLoading(false) : console.log(false);
+      !user && setLoading(false) ;
     }, 1000)
 
 

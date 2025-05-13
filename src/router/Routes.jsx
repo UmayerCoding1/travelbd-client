@@ -13,6 +13,9 @@ import DestinationDetails from "../components/pages/destinatons/destinatinDetail
 import Booking from "../components/pages/booking/Booking";
 import Error from "../components/shared/error/Error";
 import MyBooking from "../components/pages/user/my-booking/MyBooking";
+import AdminDashboard from "../components/pages/admin/page/AdminDashboard";
+import AdminHome from "../components/pages/admin/page/Home";
+import Users from "../components/pages/admin/page/Users";
 
 const render = createBrowserRouter([
     {
@@ -66,6 +69,24 @@ const render = createBrowserRouter([
     {path: '/sign-in', element:<SignIn/>},
     {path: '/sign-up', element:<SignUp/>},
     
+    
+    // admin related route 
+    {
+        path:'admin',
+        element:<PrivetRoute><AdminDashboard/></PrivetRoute>,
+        children:[
+            {
+                path:'home',
+                element:<AdminHome/>
+            }
+            ,
+            {
+                path:'users',
+                element: <PrivetRoute><Users /> </PrivetRoute>
+            }
+           
+        ]
+    }
     
 ])
 

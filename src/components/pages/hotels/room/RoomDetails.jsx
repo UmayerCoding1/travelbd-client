@@ -22,34 +22,34 @@ const RoomDetails = ({ roomData, setOpenRoomDetails, setPrevScrollY }) => {
               <div className='text-gray-500'>
                 <h2 className='text-Headings font-bold text-lg mt-2'>{title}</h2>
 
-                <div className='flex items-center  gap-1 text-xs mt-2'>
+                <div className='flex items-center  gap-1 text-sm mt-2'>
                   <span><FaBed /></span>
                   <span>{bad}</span>
                 </div>
 
-                <div className='flex items-center gap-1 text-xs '>
+                <div className='flex items-center gap-1 text-sm '>
                   <span><GroupIcon /></span>
                   <span>{people.adults} adults , {people.children} children</span>
                 </div>
                 <div className='flex items-center gap-2 mt-1'>
-                  {catering.morning ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Breakfast <SelectIcon /></span> : <span className='flex items-center gap-1  text-red-500 font-medium text-xs'>Breakfast <CloseIcon /></span>}
-                  {catering.lunch ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Lunch <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-xs `}>Lunch <CloseIcon /></span>}
-                  {catering.dinner ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Dinner <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-xs `}>Dinner <CloseIcon /></span>}
+                  {catering.morning ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Breakfast <SelectIcon /></span> : <span className='flex items-center gap-1  text-red-500 font-medium text-sm'>Breakfast <CloseIcon /></span>}
+                  {catering.lunch ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Lunch <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-sm `}>Lunch <CloseIcon /></span>}
+                  {catering.dinner ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Dinner <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-sm `}>Dinner <CloseIcon /></span>}
                 </div>
               </div>
               <hr className='mt-4 border-gray-300' />
 
               <div className='flex mt-2'>
                 <div className='w-1/2'>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room type : <span className='font-normal text-gray-600'>{roomType}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Characteristics : <span className='font-normal text-gray-600'>{roomCharacteristics}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room View : <span className='font-normal text-gray-600'>{roomView}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room type : <span className='font-normal text-gray-600'>{roomType}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Characteristics : <span className='font-normal text-gray-600'>{roomCharacteristics}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room View : <span className='font-normal text-gray-600'>{roomView}</span></h2>
                 </div>
 
                 <div className='w-1/2'>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Non-Smoking Room</h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Capacity : <span className='font-normal text-gray-600'>{RoomCapacity}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Size : <span className='font-normal text-gray-600'>None</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Non-Smoking Room</h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Capacity : <span className='font-normal text-gray-600'>{RoomCapacity}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Size : <span className='font-normal text-gray-600'>None</span></h2>
                 </div>
               </div>
               <hr className='mt-4 border-gray-300' />
@@ -63,7 +63,7 @@ const RoomDetails = ({ roomData, setOpenRoomDetails, setPrevScrollY }) => {
                       <div key={_id} className='mt-3'>
                         <h3 className='text-Headings font-medium'>{category}</h3>
                         <ul className='mt-2 mb-2 ml-3'>
-                          {item?.map((item, i) => <li key={i} className='text-xs mt-1 text-gray-600'>{item}</li>)}
+                          {item?.map((item, i) => <li key={i} className='text-sm mt-1 text-gray-600'>{item}</li>)}
                         </ul>
                       </div>
                     ])
@@ -90,34 +90,34 @@ const RoomDetails = ({ roomData, setOpenRoomDetails, setPrevScrollY }) => {
               <div className='text-gray-500'>
                 <h2 className='text-Headings font-bold text-lg mt-2'>{title}</h2>
 
-                <div className='flex items-center  gap-1 text-xs mt-2'>
+                <div className='flex items-center  gap-1 text-sm mt-2'>
                   <span><FaBed /></span>
                   <span>{bad}</span>
                 </div>
 
-                <div className='flex items-center gap-1 text-xs '>
+                <div className='flex items-center gap-1 text-sm '>
                   <span><GroupIcon /></span>
                   <span>{people.adults} adults , {people.children} children</span>
                 </div>
                 <div className='flex items-center gap-2 mt-1'>
-                  {catering.morning ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Breakfast <SelectIcon /></span> : <span className='flex items-center gap-1  text-red-500 font-medium text-xs'>Breakfast <CloseIcon /></span>}
-                  {catering.lunch ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Lunch <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-xs `}>Lunch <CloseIcon /></span>}
-                  {catering.dinner ? <span className={`flex items-center gap-1 text-emerald-500 text-xs font-medium`}>Dinner <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-xs `}>Dinner <CloseIcon /></span>}
+                  {catering.morning ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Breakfast <SelectIcon /></span> : <span className='flex items-center gap-1  text-red-500 font-medium text-sm'>Breakfast <CloseIcon /></span>}
+                  {catering.lunch ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Lunch <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-sm `}>Lunch <CloseIcon /></span>}
+                  {catering.dinner ? <span className={`flex items-center gap-1 text-emerald-500 text-sm font-medium`}>Dinner <SelectIcon /></span> : <span className={`flex items-center gap-1 text-red-500 font-medium text-sm `}>Dinner <CloseIcon /></span>}
                 </div>
               </div>
               <hr className='mt-4 border-gray-300' />
 
               <div className='flex mt-2'>
                 <div className='w-1/2'>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room type : <span className='font-normal text-gray-600'>{roomType}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Characteristics : <span className='font-normal text-gray-600'>{roomCharacteristics}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room View : <span className='font-normal text-gray-600'>{roomView}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room type : <span className='font-normal text-gray-600'>{roomType}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Characteristics : <span className='font-normal text-gray-600'>{roomCharacteristics}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room View : <span className='font-normal text-gray-600'>{roomView}</span></h2>
                 </div>
 
                 <div className='w-1/2'>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Non-Smoking Room</h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Capacity : <span className='font-normal text-gray-600'>{RoomCapacity}</span></h2>
-                  <h2 className='text-xs font-semibold text-Headings mt-1'>Room Size : <span className='font-normal text-gray-600'>None</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Non-Smoking Room</h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Capacity : <span className='font-normal text-gray-600'>{RoomCapacity}</span></h2>
+                  <h2 className='text-sm font-semibold text-Headings mt-1'>Room Size : <span className='font-normal text-gray-600'>None</span></h2>
                 </div>
               </div>
               <hr className='mt-4 border-gray-300' />
@@ -131,7 +131,7 @@ const RoomDetails = ({ roomData, setOpenRoomDetails, setPrevScrollY }) => {
                       <div key={_id} className='mt-3'>
                         <h3 className='text-Headings font-medium'>{category}</h3>
                         <ul className='mt-2 mb-2 ml-3'>
-                          {item?.map((item, i) => <li key={i} className='text-xs mt-1 text-gray-600'>{item}</li>)}
+                          {item?.map((item, i) => <li key={i} className='text-sm mt-1 text-gray-600'>{item}</li>)}
                         </ul>
                       </div>
                     ])

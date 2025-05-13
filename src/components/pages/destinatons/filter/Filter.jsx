@@ -69,7 +69,7 @@ const Filter = ({ setFilterValue }) => {
               {tourType?.map(item =>
                 <div key={item} className='flex items-center gap-2 mt-1'>
                 <input onChange={() => handleCheckedTOurType(item)} checked={tourTypeValue === item} type="checkbox" id={item} className='accent-black' />
-                <label className='text-lg lg:text-xs font-medium' htmlFor="city">{item}</label>
+                <label className='text-lg lg:text-sm font-medium' htmlFor="city">{item}</label>
               </div> )}
             </div>
           </div>
@@ -82,7 +82,7 @@ const Filter = ({ setFilterValue }) => {
               {destinationRating.map(item => <button
                 onClick={() => setStarRatingValue(item)}
                 key={item}
-                className={`border border-black p-2 lg:p-1 rounded-lg flex items-center font-medium gap-1 lg:text-xs ${starRatingValue === item ? 'bg-black text-white' : ''}`}
+                className={`border border-black p-2 lg:p-1 rounded-lg flex items-center font-medium gap-1 lg:text-sm ${starRatingValue === item ? 'bg-black text-white' : ''}`}
               >
                 <StarIcon />
                 {item} Star

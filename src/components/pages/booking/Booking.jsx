@@ -38,27 +38,27 @@ const Booking = () => {
 
             <div className='mt-2'>
               <h2 className='text-lg font-bodyTextFontRaleway font-semibold'>Non-refundable</h2>
-              <p className='mt-1 text-xs'>This booking cannot be modified once confirmed. If you cancel, no refund will be provided. Failure to check in will result in a penalty equal to the cancellation fee. Please review your booking details carefully before confirming.</p>
+              <p className='mt-1 text-sm'>This booking cannot be modified once confirmed. If you cancel, no refund will be provided. Failure to check in will result in a penalty equal to the cancellation fee. Please review your booking details carefully before confirming.</p>
             </div>
 
             <div className='mt-4'>
               <h2 className='text-lg font-bodyTextFontRaleway font-semibold'>Check-in and Check-out Times</h2>
-              <p className='mt-1 text-xs'>For the room type you selected, check-in is from 14:00 to 24:00 and check-out is before 12:00.</p>
+              <p className='mt-1 text-sm'>For the room type you selected, check-in is from 14:00 to 24:00 and check-out is before 12:00.</p>
             </div>
 
             <div className='mt-4'>
               <h2 className='text-lg font-bodyTextFontRaleway font-semibold'>Children Not Permitted</h2>
-              <p className='mt-1 text-xs'>Children aren't permitted to stay in this room type. If you're traveling with children, please take a look at other room types available at this hotel.</p>
+              <p className='mt-1 text-sm'>Children aren't permitted to stay in this room type. If you're traveling with children, please take a look at other room types available at this hotel.</p>
             </div>
 
             <div className='mt-4'>
               <h2 className='text-lg font-bodyTextFontRaleway font-semibold'>Deposit Policy</h2>
-              <p className='mt-1 text-xs'>A cash deposit of THB 500.00 (approx. $14.81) in total is required at check-in. It will be refunded at the front desk upon check-out.</p>
+              <p className='mt-1 text-sm'>A cash deposit of THB 500.00 (approx. $14.81) in total is required at check-in. It will be refunded at the front desk upon check-out.</p>
             </div>
 
             <div className='mt-4'>
               <h2 className='text-lg font-bodyTextFontRaleway font-semibold'>City Notes</h2>
-              <p className='mt-1 text-xs'>It is prohibited to bring durian to the hotel.</p>
+              <p className='mt-1 text-sm'>It is prohibited to bring durian to the hotel.</p>
             </div>
           </div>
         </div>

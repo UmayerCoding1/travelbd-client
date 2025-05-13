@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router';
 import UsePublicApiEndpoint from '../../../../hooks/usePublicApiEndpoint';
 import useAuth from '../../../../hooks/useAuth';
+import useSecureApiEndPoint from '../../../../hooks/useSecureApiEndPoint';
 
 
 const HotelBooking = ({ hotels }) => {
@@ -14,9 +15,10 @@ const HotelBooking = ({ hotels }) => {
   const childrenFiled = Array.from({ length: parseInt(children) }, (_, index) => index + 1);
   const adultsCount = parseInt(adults);
   const childrenCount = parseInt(children);
-  const publicApiEndPoint = UsePublicApiEndpoint();
+  const secureApiEndPoint = useSecureApiEndPoint();
   const { user } = useAuth();
-
+  console.log(state);
+  
 
   const createDate = (date) => {
     const [day, month, year] = date.split("-").map(Number);
@@ -36,7 +38,7 @@ const HotelBooking = ({ hotels }) => {
   const checkInDate = (createDate(chackIn));
   const checkOutDate = (createDate(chackOut));
   const night = calculateNight(checkInDate, checkOutDate);
-  console.log(checkOutDate.toString().split('G')[0]);
+
 
   const formattedCheckInDate = new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -88,12 +90,12 @@ const HotelBooking = ({ hotels }) => {
       paymentStatus: 'pending'
     }
     setLoading(true);
-    const response = await publicApiEndPoint.post('/booking-payment', orderDetails)
+    const response = await secureApiEndPoint.post('/booking-payment', orderDetails)
     if (response.data.url) {
       setLoading(false)
       window.location.replace(response.data.url)
     }
-    console.log(Object.values(orderDetails));
+  
   }
   return (
     <div className=''>
@@ -106,14 +108,14 @@ const HotelBooking = ({ hotels }) => {
               <h2 className='text-xl font-medium uppercase border-b border-gray-600'>Adults</h2>
               {adultsFields.map((_, index) => (
                 <div key={index} className='mt-1'>
-                  <label className='text-xs uppercase font-semibold' htmlFor="adults">Adult <span>{index + 1}</span></label> <br />
+                  <label className='text-sm uppercase font-semibold' htmlFor="adults">Adult <span>{index + 1}</span></label> <br />
                   <div className="mb-4 w-full  lg:flex gap-x-2">
                     <div className='mt-2 lg:mt-0   lg:w-1/2'>
                       <input type="text"
                         name={`adult-${index + 1}-name}`}
                         id={`adult-${index + 1}`}
                         placeholder={`Adult ${index + 1} name`}
-                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                         onChange={(e) => handleInputValue(index, 'adults', 'name', e.target.value)}
                         required
                       />
@@ -124,7 +126,7 @@ const HotelBooking = ({ hotels }) => {
                         name={`adult-${index + 1}-contact}`}
                         id={`adult-${index + 1}`}
                         placeholder={`Adult ${index + 1} contact`}
-                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                         onChange={(e) => handleInputValue(index, 'adults', 'contact', e.target.value)}
                         required
                       />
@@ -139,14 +141,14 @@ const HotelBooking = ({ hotels }) => {
               <h2 className={`text-xl font-medium uppercase border-b border-gray-600 ${childrenFiled <= 0 && 'hidden'}`}>Children</h2>
               {childrenFiled?.map((_, index) => (
                 <div key={index} className='mt-1'>
-                  <label className='text-xs uppercase font-semibold' htmlFor="adults">Children <span>{index + 1}</span></label> <br />
+                  <label className='text-sm uppercase font-semibold' htmlFor="adults">Children <span>{index + 1}</span></label> <br />
                   <div className="mb-4 w-full  lg:flex gap-x-2">
                     <div className='mt-2 lg:mt-0   lg:w-1/2'>
                       <input type="text"
                         name={`adult-${index + 1}-name}`}
                         id={`adult-${index + 1}`}
                         placeholder={`Adult ${index + 1} name`}
-                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                         onChange={(e) => handleInputValue(index, 'children', 'name', e.target.value)}
                         required
                       />
@@ -157,7 +159,7 @@ const HotelBooking = ({ hotels }) => {
                         name={`chaildren-${index + 1}-age}`}
                         id={`chaildren-${index + 1}`}
                         placeholder={`chaildren ${index + 1} age`}
-                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                        className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                         onChange={(e) => handleInputValue(index, 'children', 'age', e.target.value)}
                         required
                       />
@@ -170,28 +172,28 @@ const HotelBooking = ({ hotels }) => {
 
             <div className='mb-3 shadow-primaryShadow rounded-lg p-2'>
               <h2 className='text-xl font-bodyTextFontLato font-semibold'>Primary Contact</h2>
-              <p className='text-xs mb-2'>
+              <p className='text-sm mb-2'>
                 Please enter the contact details of the person who would like to receive the confirmation and be contacted if required.
               </p>
 
               <div className='lg:flex items-start w-full gap-2'>
                 <div className='w-full lg:w-1/2'>
-                  <label className='text-xs font-bold my-2' htmlFor="email">Email</label> <br />
+                  <label className='text-sm font-bold my-2' htmlFor="email">Email</label> <br />
                   <input
                     type="email"
                     name="email"
-                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                     defaultValue={user?.email || ''}
                     required
                   />
                 </div>
 
                 <div className='w-full lg:w-1/2'>
-                  <label className='text-xs font-bold my-2' htmlFor="number">Mobile Number</label> <br />
+                  <label className='text-sm font-bold my-2' htmlFor="number">Mobile Number</label> <br />
                   <input
                     type="text"
                     name="contact_number"
-                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-xs outline-none border-[1.5px] border-gray-500'
+                    className='w-full h-10 bg-gray-100 pl-2 rounded-lg text-sm outline-none border-[1.5px] border-gray-500'
                     defaultValue={user?.emergency_contact || ''}
                     required
                   />
@@ -202,11 +204,11 @@ const HotelBooking = ({ hotels }) => {
 
             <div>
               <div className='hidden lg:block'>
-                <button className='w-full bg-primaryColor h-10 rounded-lg text-xs font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
+                <button className='w-full bg-primaryColor h-10 rounded-lg text-sm font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
               </div>
 
               <div className='lg:hidden fixed left-0 bottom-0 w-full '>
-                <button className='w-full bg-primaryColor h-10  text-xs font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
+                <button className='w-full bg-primaryColor h-10  text-sm font-semibold text-white '>{loading ? <span className="loading loading-spinner loading-xs"></span> : 'Confirm Booking'}</button>
               </div>
             </div>
 
@@ -246,7 +248,7 @@ const HotelBooking = ({ hotels }) => {
 
           <div className='w-full mt-4'>
             <div className='w-full h-9 flex items-center justify-between'>
-              <p className='text-xs flex gap-1'>
+              <p className='text-sm flex gap-1'>
                 <span>{room} room</span>
                 <span>x</span>
                 <span>{night} night</span>
@@ -259,7 +261,7 @@ const HotelBooking = ({ hotels }) => {
             </div>
 
             <div className='w-full h-9 flex items-center justify-between'>
-              <p className='text-xs flex items-center gap-1'>
+              <p className='text-sm flex items-center gap-1'>
                 <span>Special Discount</span>
                 <span className='bg-Headings text-white text-[10px] p-1 rounded-lg'>{selectedRoom?.discount}%</span>
               </p>
@@ -270,7 +272,7 @@ const HotelBooking = ({ hotels }) => {
               </p>
             </div>
             <div className='w-full h-9 flex items-center justify-between'>
-              <p className='text-xs flex items-center gap-1'>
+              <p className='text-sm flex items-center gap-1'>
                 <span>Taxes</span>
               </p>
 

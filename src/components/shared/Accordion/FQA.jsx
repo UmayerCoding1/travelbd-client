@@ -27,21 +27,21 @@ const FQA = ({ keyValue, value, isActive, onToggle }) => {
     }`}>
 
 {isActive && <>
-                <div className='flex gap-2  ml-5 text-xs'>{Array.isArray(value) && <p className='pl-2'>{value.join(",")}</p>}</div>
+                <div className='flex gap-2  ml-5 text-sm'>{Array.isArray(value) && <p className='pl-2'>{value.join(",")}</p>}</div>
                 <div className='ml-5'>{typeof value === 'object' && !Array.isArray(value) && (<div>
                     {/* <p className='uppercase text-lg font-semibold'>inclusion</p> */}
                     <ul>
-                        {value?.inclusion?.map(item => <li key={item} className='flex items-center gap-2 text-xs'><span className='block w-2 h-2 rounded-full bg-emerald-500'></span> {item}</li>)}
+                        {value?.inclusion?.map(item => <li key={item} className='flex items-center gap-2 text-sm'><span className='block w-2 h-2 rounded-full bg-emerald-500'></span> {item}</li>)}
                     </ul>
 
                     
                     <ul className='mt-3'>
-                        {value?.exclusion?.map(item => <li key={item} className='flex items-center gap-2 text-xs'><span className='block w-2 h-2 bg-red-500 rounded-full'></span> {item}</li>)}
+                        {value?.exclusion?.map(item => <li key={item} className='flex items-center gap-2 text-sm'><span className='block w-2 h-2 bg-red-500 rounded-full'></span> {item}</li>)}
                     </ul>
                 </div>)}</div>
 
                 <div>
-                    {!Array.isArray(value) && typeof value !== 'object' && <p className='ml-5 text-xs'>{keyValue === 'Price' ? `৳ ${value} per person` : value}</p>}
+                    {!Array.isArray(value) && typeof value !== 'object' && <p className='ml-5 text-sm'>{keyValue === 'Price' ? `৳ ${value} per person` : value}</p>}
                 </div>
             </>}
 

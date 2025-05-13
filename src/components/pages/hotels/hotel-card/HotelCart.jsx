@@ -10,7 +10,7 @@ const HotelCart = ({ hotel,searchdata }) => {
   const discountAmount = parseInt((price * discount) / 100);
 
   const review = 1000 //todo: add a field  to review from hotel data
-  // console.log(hotel);
+  //
   return (
     
       <div className='mb-3 shadow-primaryShadow p-2 lg:flex gap-2 w-full '>
@@ -22,30 +22,30 @@ const HotelCart = ({ hotel,searchdata }) => {
         <div className='mt-2'>
           <div>
             <h2 className='text-xl font-[700] font-bodyTextFontRaleway text-Headings'>{hotelName}</h2>
-            <div className='flex items-center gap-2 text-xs mt-1'>
-              <button className='bg-Headings text-white px-3  rating-btn rounded-tl-[10px] rounded-tr-none rounded-b-[10px] '><span>{star}.0</span> <span className='text-xs'>/</span> <span className='text-gray-300'>5</span></button>
-              <p className='text-xs'>{review.toLocaleString()} <span>Review</span></p>
+            <div className='flex items-center gap-2 text-sm mt-1'>
+              <button className='bg-Headings text-white px-3  rating-btn rounded-tl-[10px] rounded-tr-none rounded-b-[10px] '><span>{star}.0</span> <span className='text-sm'>/</span> <span className='text-gray-300'>5</span></button>
+              <p className='text-sm'>{review.toLocaleString()} <span>Review</span></p>
             </div>
 
-            <p className='text-Headings text-xs flex items-start gap-2 mt-2'><LocationIcon className='mt-1' /> {location}</p>
+            <p className='text-Headings text-sm flex items-start gap-2 mt-2'><LocationIcon className='mt-1' /> {location}</p>
           </div>
 
 
           <div className='rounded-lg p-3 pb-0 mt-3 flex'>
             <div className=' '>
-              <p className='text-xs text-[#e2458e] font-semibold border border-[#e2458e] inline-block p-2 rounded-lg'>{rooms?.length} Rooms Remaining</p>
+              <p className='text-sm text-[#e2458e] font-semibold border border-[#e2458e] inline-block p-2 rounded-lg'>{rooms?.length} Rooms Remaining</p>
 
 
               <div className='mt-2 lg:mt-0'>
-                {amenities?.map((item, i) => <span key={i} className='text-xs font-medium p-[2px] mr-2 underline  block lg:inline-block'>{item}</span>)}
+                {amenities?.map((item, i) => <span key={i} className='text-sm font-medium p-[2px] mr-2 underline  block lg:inline-block'>{item}</span>)}
               </div>
 
-              <p className={`${couple ? 'border-2 border-green-500  text-green-500' : 'border-2 border-red-500 text-red-500'}  text-xs  w-[130px] text-center p-1 mt-2 rounded-xl font-medium flex items-center gap-1`}>Couple Friendly {couple ? <SelectIcon /> : <CloseIcon />}</p>
+              <p className={`${couple ? 'border-2 border-green-500  text-green-500' : 'border-2 border-red-500 text-red-500'}  text-sm  w-[130px] text-center p-1 mt-2 rounded-xl font-medium flex items-center gap-1`}>Couple Friendly {couple ? <SelectIcon /> : <CloseIcon />}</p>
             </div>
 
 
             <div className=' w-[65%]  flex justify-end items-end flex-col'>
-              <div className='bg-Headings text-white text-xs text-center p-1 rounded-tl-[10px]  rounded-b-[10px] '>{discount}% OFF</div>
+              <div className='bg-Headings text-white text-sm text-center p-1 rounded-tl-[10px]  rounded-b-[10px] '>{discount}% OFF</div>
 
               <p className={`text-[10px] ${onlinePayment ? 'text-emerald-500' : 'text-red-500'}`}>{onlinePayment ? 'Online payment is available' : 'Online payment is not available'}</p>
 
@@ -53,7 +53,7 @@ const HotelCart = ({ hotel,searchdata }) => {
 
               <p className='text-xl font-semibold text-Headings'>৳ {discountAmount.toLocaleString()}</p>
               <p className='text-[10px] font-medium'>for {duration}, pre room</p>
-              <p className='text-xs'>Total taxes: BTD {texes}</p>
+              <p className='text-sm'>Total taxes: BTD {texes}</p>
 
 
              <Link to={`/to/hotel/${_id}/hotel-deatils?bookingInfo=${searchdata}`}>

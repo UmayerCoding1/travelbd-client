@@ -10,7 +10,7 @@ const Service = () => {
         <SectionTitle title={"What We Give"} />
         <h1 className="text-5xl font-bold">Best Features</h1>
         <h1 className="text-5xl mt-2">For You</h1>
-        <p className="text-xs mt-4">
+        <p className="text-sm mt-4">
           We will provide the bast features for those of you who want to travel
           comfortably with your family.
         </p>
@@ -22,7 +22,7 @@ const Service = () => {
         <div data-aos="fade-right" className=" lg:w-56 h-44 shadow-lg flex items-center justify-center flex-col p-2">
           <img className="w-10" src={service1} alt="" />
           <h2 className="font-bold my-2">Lat’s of Choices </h2>
-          <p className="text-xs ">
+          <p className="text-sm ">
             We have provided several choices of destination and very cheap
             travelling packages
           </p>
@@ -31,7 +31,7 @@ const Service = () => {
         <div data-aos="fade-right" className=" lg:w-56 h-44 shadow-lg flex items-center justify-center flex-col p-2">
           <img className="w-10" src={service2} alt="" />
           <h2 className="font-bold my-2">Easy Booking </h2>
-          <p className="text-xs ">
+          <p className="text-sm ">
             We will also make it easier for users to book tickets or book the
             place you want
           </p>
@@ -40,7 +40,7 @@ const Service = () => {
         <div data-aos="fade-right" className=" lg:w-56 h-44 shadow-lg flex items-center justify-center flex-col p-2">
           <img className="w-10" src={service3} alt="" />
           <h2 className="font-bold my-2">Bast Tour Guide</h2>
-          <p className="text-xs ">
+          <p className="text-sm ">
             We provide professional tour guide and provide and people who
             understand the place
           </p>

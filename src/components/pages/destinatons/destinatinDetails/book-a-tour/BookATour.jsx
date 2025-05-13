@@ -58,7 +58,7 @@ const BookATour = ({ title, offer, tourData }) => {
         }
 
         const response = await publicApiEndPoint.post('/booking-destination', bookingInfo);
-        console.log(response.data);
+      
         if (response.data.errorMessage) {
             setLoadin(false);
             toast.error(response.data.errorMessage, { duration: 1500, position: 'top-right' })
@@ -67,7 +67,7 @@ const BookATour = ({ title, offer, tourData }) => {
             setLoadin(false);
             toast.success(response.data.message, { duration: 1500, position: 'top-right' })
         }
-        console.log(bookingInfo);
+      
 
 
     }
@@ -80,36 +80,36 @@ const BookATour = ({ title, offer, tourData }) => {
 
             {title && <h1 className='text-center font-semibold my-3'>{title}</h1>}
             <div className='mb-3'>
-                <label className='text-xs font-medium' htmlFor="fullname">Full name</label> <br />
-                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-xs' type="text" name="fullname" defaultValue={user?.fullName} required />
+                <label className='text-sm font-medium' htmlFor="fullname">Full name</label> <br />
+                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-sm' type="text" name="fullname" defaultValue={user?.fullName} required />
             </div>
             <div className='mb-3'>
-                <label className='text-xs font-medium' htmlFor="email">Email</label> <br />
-                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-xs' name='email' defaultValue={user?.email} required />
+                <label className='text-sm font-medium' htmlFor="email">Email</label> <br />
+                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-sm' name='email' defaultValue={user?.email} required />
             </div>
             <div className='mb-3'>
-                <label className='text-xs font-medium' htmlFor="email">Contact Number</label> <br />
-                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-xs' type="number" name="contact_number" defaultValue={user?.emergency_contact} required />
+                <label className='text-sm font-medium' htmlFor="email">Contact Number</label> <br />
+                <input className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-sm' type="number" name="contact_number" defaultValue={user?.emergency_contact} required />
             </div>
 
             <div className='mb-2'>
-                <label className='text-xs font-medium' htmlFor="Preferred Journey Date">Preferred Journey Date</label>
-                <input onChange={(e) => setSelectDate(e.target.value)} className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-xs' type="date" name="journey-date" required />
+                <label className='text-sm font-medium' htmlFor="Preferred Journey Date">Preferred Journey Date</label>
+                <input onChange={(e) => setSelectDate(e.target.value)} className='border-[1.5px] border-gray-200 w-full h-10 outline-none pl-2 rounded-lg text-sm' type="date" name="journey-date" required />
             </div><div className='mb-2'>
                 {/* <DateRangeCalender btnText={'Done'}/> */}
             </div>
 
             <div className='mb-2'>
-                <label className='text-xs font-medium' htmlFor="people">People</label>
+                <label className='text-sm font-medium' htmlFor="people">People</label>
                 <div className='border p-2  flex items-center justify-between px-4 rounded-lg' >
                     <button type='button' onClick={handleDecrement} className='bg-gray-200 p-2 rounded-full w-5 h-5 flex items-center justify-center hover:bg-red-500 hover:text-white'>-</button>
-                    <span className='text-xs font-medium '>{peopleCount}</span>
+                    <span className='text-sm font-medium '>{peopleCount}</span>
                     <button type='button' onClick={handleIncrement} className='bg-gray-200 p-2 rounded-full w-5 h-5 flex items-center justify-center hover:bg-emerald-500 hover:text-white'>+</button>
                 </div>
             </div>
 
             <div>
-                <button type='submit' className='text-xs font-semibold bg-primaryBgColor text-white w-full h-8 rounded-lg mt-5'>{loading? <span className="loading loading-spinner loading-xs"></span> : "Booked"}</button>
+                <button type='submit' className='text-sm font-semibold bg-primaryBgColor text-white w-full h-8 rounded-lg mt-5'>{loading? <span className="loading loading-spinner loading-xs"></span> : "Booked"}</button>
             </div>
         </form>
     );

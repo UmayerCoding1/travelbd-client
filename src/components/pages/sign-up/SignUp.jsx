@@ -30,7 +30,7 @@ const SignUp = () => {
 
             createUser(userData)
             .then(res => {
-                console.log(res.data);
+            
                 
                toast.success(res.data.message);
                setError('')
@@ -59,39 +59,39 @@ const SignUp = () => {
              <form onSubmit={handleSignUp} className='p-10 pt-5'>
                 <div>
                     <h2 className='text-3xl font-bold'>Sign Up</h2>
-                    <p className='text-xs text-gray-500 mt-2'>Let's start with some facts about you</p>
+                    <p className='text-sm text-gray-500 mt-2'>Let's start with some facts about you</p>
                 </div>
 
 
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >Fullname</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="text" {...register("fullName", {required: true})} placeholder='type hear'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >Fullname</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="text" {...register("fullName", {required: true})} placeholder='type hear'/>
                 </div>
 
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >User Name</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="text" {...register("userName", {required: true})} placeholder='type hear'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >User Name</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="text" {...register("userName", {required: true})} placeholder='type hear'/>
                 </div>
 
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >Email</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="email" {...register("email")} placeholder='abc@gmail.com'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >Email</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="email" {...register("email")} placeholder='abc@gmail.com'/>
                 </div>
 
                 <div className='bg-gray-200 h-14 mt-5 p-2 rounded-lg relative'>
-                    <p className='text-xs font-bold absolute top-2 z-10 font-Inconsolata' >Password</p> <br />
-                    <input className='outline-none absolute text-xs pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="password" {...register("password", {required: true})} placeholder='type hear'/>
+                    <p className='text-sm font-bold absolute top-2 z-10 font-Inconsolata' >Password</p> <br />
+                    <input className='outline-none absolute text-sm pt-2 top-0 left-0 pl-2 bg-transparent w-full h-full ' type="password" {...register("password", {required: true})} placeholder='type hear'/>
                     
                 </div>
-                {error ?<p className='text-xs pl-2 text-red-500 font-semibold'>{error}</p> : ''}
+                {error ?<p className='text-sm pl-2 text-red-500 font-semibold'>{error}</p> : ''}
                 
                 {/* todo */}
 
 
                 <div>
-                    <button className='w-full h-10 rounded-lg mt-3 bg-black text-white text-xs' type='submit'>Sign Up</button>
+                    <button className='w-full h-10 rounded-lg mt-3 bg-black text-white text-sm' type='submit'>Sign Up</button>
                 </div>
-                <p className='text-xs mt-1 text-center font-semibold'>Already yoy have an account? <Link to={'/sign-in'} className='link'>Sign In</Link></p>
+                <p className='text-sm mt-1 text-center font-semibold'>Already yoy have an account? <Link to={'/sign-in'} className='link'>Sign In</Link></p>
              </form>
            </div>
 

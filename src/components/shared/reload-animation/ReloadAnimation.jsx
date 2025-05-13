@@ -8,7 +8,7 @@ const ReloadAnimation = () => {
             <img data-aos="fade-right"
      data-aos-offset="300"
      data-aos-easing="ease-in-sine" className='lg:w-[200px]' src={logo} alt="" />
-            <p className='text-xs uppercase'>travel Smart, Discover the Heart of travelBD.</p>
+            <p className='text-sm uppercase'>travel Smart, Discover the Heart of travelBD.</p>
         </div>
     );
 };

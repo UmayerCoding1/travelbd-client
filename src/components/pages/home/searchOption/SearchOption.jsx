@@ -48,7 +48,10 @@ const SearchOption = ({ searchOptionValue,style }) => {
     day: '2-digit',
     year: 'numeric'
   }).format(endDate || new Date());
- const filterLocation = location.filter(location => location.title.toLowerCase().includes(searchLocation.toLowerCase() || searchHotel.toLowerCase()));
+
+
+  
+ const filterLocation = location?.filter(location => location.name.toLowerCase().includes(searchLocation.toLowerCase() || searchHotel.toLowerCase()));
  const hotelUrlParams = new URLSearchParams(location.search);
   
  const HotellocationName = hotelUrlParams.get("location");
@@ -111,7 +114,7 @@ const handleTourSearch = (e) => {
      navigate(`/destinations?location=${selectTourLocation}`)
    }
    else{
-    console.log('something is missing');
+    toast.error('something is missing');
   }
 }
 
@@ -133,7 +136,7 @@ const handleHotelSearch = (e) => {
     if (selectHotelLocation && selectHotelLocation !== '' && chackIn && chackOut) {
        navigate(`/hotel?location=${selectHotelLocation}&&chackIn=${chackIn}&&chackOut=${chackOut}&&room=${bookingCounter.rooms}&&adults=${bookingCounter.adults}&&children=${bookingCounter.children}`);
     }else{
-      console.log('something is missing');
+      toast.error('something is missing');
     }  
 }
 
@@ -205,25 +208,25 @@ const handleHotelSearch = (e) => {
                   </div>
 
                   <div className="flex  flex-col justify-center ">
-                    <p className="text-xs text-gray-500 uppercase">City/Area</p>
+                    <p className="text-sm text-gray-500 uppercase">City/Area</p>
                     <h3 className="text-[15px] font-bold text-gray-600">{HotellocationName ? HotellocationName : selectHotelLocation ? selectHotelLocation : 'Hotel location'}</h3>
                   </div>
 
-                  {showHotelSearchBar && <div ref={hotelLocationListRef} className='w-full lg:w-full h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
+                  {showHotelSearchBar && <div ref={hotelLocationListRef} className='w-full lg:w-full max-h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
                     <div className='w-full h-10  flex items-center relative border-b border-gray-400'>
                       <SearchIcon className='absolute text-gray-500' />
                       <input
                         onClick={(e) => e.stopPropagation()}
                         onChange={(e) => { setSearchHotel(e.target.value); }}
                         defaultValue={selectHotelLocation}
-                        className='w-full h-full text-xs pl-4 outline-none' type="text" placeholder='Type to search' />
+                        className='w-full h-full text-sm pl-4 outline-none bg-white' type="text" placeholder='Type to search' />
                     </div>
 
-                    <div className='w-full h-80 overflow-scroll mt-1'>
+                    <div className='w-full max-h-80 overflow-scroll mt-1 p-2' >
                       {filterLocation.map(location => <p
-                        onClick={() => { setSelectHotelLocation(location.title) }}
+                        onClick={() => { setSelectHotelLocation(location.name) }}
                         key={location.id}
-                        className='text-xs p-2 rounded-lg hover:bg-[#E4E9F1] flex items-center gap-2'><LocationIcon className='text-gray-500' /> {location.title}</p>)}
+                        className='text-sm p-2 rounded-lg hover:bg-[#E4E9F1] flex items-center gap-2'><LocationIcon className='text-gray-500' /> {location.name}</p>)}
                     </div>
                   </div>}
                 </div>
@@ -238,9 +241,9 @@ const handleHotelSearch = (e) => {
 
 
                     <div className="flex  flex-col justify-center">
-                      <p className="text-xs text-gray-500 uppercase">Check in</p>
-                      <h3 className="text-xs font-bold"><span>{startDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{startDateFormat?.split(',')[2]}</span></h3>
-                      <p className='text-xs text-gray-500'>{startDateFormat?.split(',')[0]}</p>
+                      <p className="text-sm text-gray-500 uppercase">Check in</p>
+                      <h3 className="text-sm font-bold"><span>{startDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{startDateFormat?.split(',')[2]}</span></h3>
+                      <p className='text-sm text-gray-500'>{startDateFormat?.split(',')[0]}</p>
                     </div>
                   </div>
 
@@ -255,9 +258,9 @@ const handleHotelSearch = (e) => {
 
 
                     <div className="flex  flex-col justify-center">
-                      <p className="text-xs text-gray-500 uppercase">Check out</p>
-                      <h3 className="text-xs font-bold"><span>{endDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{endDateFormat?.split(',')[2]}</span></h3>
-                      <p className='text-xs text-gray-500'>{endDateFormat?.split(',')[0]}</p>
+                      <p className="text-sm text-gray-500 uppercase">Check out</p>
+                      <h3 className="text-sm font-bold"><span>{endDateFormat?.split(',')[1]}</span>'<span className='font-normal'>{endDateFormat?.split(',')[2]}</span></h3>
+                      <p className='text-sm text-gray-500'>{endDateFormat?.split(',')[0]}</p>
                     </div>
                   </div>
                   {showHotelBookingDate && <div ref={bookingRef} className='bg-white absolute z-10 top-[70px] p-3 shadow-2xl rounded-lg'> <DateRangeCalender setSendData={setSelectBookingDate} SetAction={setShowHotelBookingDate} visible={visible} /></div>}
@@ -269,11 +272,11 @@ const handleHotelSearch = (e) => {
                 }} className={` border border-gray-300 outline-none w-full    lg:flex p-3 gap-2 cursor-pointer  relative ${!style && 'mb-2'}`}>
 
                   <div className="">
-                    <p className="text-xs text-gray-500">Rooms and Guests</p>
+                    <p className="text-sm text-gray-500">Rooms and Guests</p>
                     <div className='flex items-center gap-2'>
                       <h3 className="text-[15px] ">
-                        <span className="font-bold">{bookingCounter.rooms}</span> <span className='text-xs'>{bookingCounter.rooms > 1 ? 'Rooms' : 'Room'}</span> ,{" "}
-                        <span className="font-bold">{parseInt(bookingCounter.adults + parseInt(bookingCounter.children))} </span><span className="text-xs">Guest</span>
+                        <span className="font-bold">{bookingCounter.rooms}</span> <span className='text-sm'>{bookingCounter.rooms > 1 ? 'Rooms' : 'Room'}</span> ,{" "}
+                        <span className="font-bold">{parseInt(bookingCounter.adults + parseInt(bookingCounter.children))} </span><span className="text-sm">Guest</span>
                       </h3>
 
                       <p className="text-[12px] text-gray-500 ">(
@@ -287,30 +290,30 @@ const handleHotelSearch = (e) => {
 
                   {showBookingCount && <div onClick={(e) => e.stopPropagation()} ref={bookingCounterRef} className='w-full h-40 bg-white shadow-2xl absolute left-0 top-[70px] z-10 p-2 rounded-lg' >
                     <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
-                      <h2 className='text-xs font-semibold '>{roomsCount > 1 ? 'Rooms' : 'Room'}</h2>
+                      <h2 className='text-sm font-semibold '>{roomsCount > 1 ? 'Rooms' : 'Room'}</h2>
                       <div className='flex items-center gap-7'>
                         <MinusIcon onClick={roomsCount > 1 ? () => handleDecrement(setRoomsCount, roomsCount) : null} className={`${roomsCount <= 1 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
-                        <span className='text-xs cursor-text w-7 text-center'>{roomsCount}</span>
+                        <span className='text-sm cursor-text w-7 text-center'>{roomsCount}</span>
                         <PlusIcon onClick={() => handleIncriment(setRoomsCount, roomsCount)} className={`  hover:text-primaryColor`} />
                       </div>
                     </div>
 
 
                     <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
-                      <h2 className='text-xs font-semibold '>Adults</h2>
+                      <h2 className='text-sm font-semibold '>Adults</h2>
                       <div className='flex items-center gap-7'>
                         <MinusIcon onClick={adultsCount > 1 ? () => handleDecrement(setAdultsCount, adultsCount) : null} className={`${adultsCount <= 1 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
-                        <span className='text-xs cursor-text w-7 text-center'>{adultsCount}</span>
+                        <span className='text-sm cursor-text w-7 text-center'>{adultsCount}</span>
                         <PlusIcon onClick={() => handleIncriment(setAdultsCount, adultsCount)} className={`  hover:text-primaryColor`} />
                       </div>
                     </div>
 
 
                     <div className='flex items-center justify-between hover:bg-blue-50 p-2 rounded-lg'>
-                      <h2 className='text-xs font-semibold '>Children</h2>
+                      <h2 className='text-sm font-semibold '>Children</h2>
                       <div className='flex items-center gap-7'>
                         <MinusIcon onClick={childrenCount > 0 ? () => handleDecrement(setChildrenCount, childrenCount) : null} className={`${childrenCount <= 0 ? 'text-gray-300 cursor-not-allowed' : 'hover:text-primaryColor'}`} />
-                        <span className='text-xs cursor-text w-7 text-center'>{childrenCount}</span>
+                        <span className='text-sm cursor-text w-7 text-center'>{childrenCount}</span>
                         <PlusIcon onClick={() => handleIncriment(setChildrenCount, childrenCount)} className={`  hover:text-primaryColor`} />
                       </div>
                     </div>
@@ -323,7 +326,7 @@ const handleHotelSearch = (e) => {
                         <span className="font-bold">{bookingCounter.children}</span> Children
                         )
                       </p>
-                      <button onClick={() => handleSunmitBookingCounter()} className='bg-primaryColor text-white text-xs font-semibold p-2 px-3  rounded-lg'>Done</button>
+                      <button onClick={() => handleSunmitBookingCounter()} className='bg-primaryColor text-white text-sm font-semibold p-2 px-3  rounded-lg'>Done</button>
                     </div>
                   </div>}
                   
@@ -334,7 +337,7 @@ const handleHotelSearch = (e) => {
 
               <div className='flex items-center justify-center'>
                 <button onClick={handleHotelSearch}
-                  className={`bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4   ${style ? 'w-40 mt-2' : 'w-full'}`}
+                  className={`bg-primaryColor text-white text-sm font-medium p-2 rounded-lg px-4   ${style ? 'w-40 mt-2' : 'w-full'}`}
                 >Search </button>
               </div>
             </section>
@@ -361,27 +364,27 @@ const handleHotelSearch = (e) => {
                 }} className='lg:border rounded-lg w-[370px]  lg:w-96 p-3 cursor-pointer flex items-center gap-2'>
                   <SearchIcon />
                   <div>
-                    <h2 className='text-xs text-gray-500'>Destination</h2>
+                    <h2 className='text-sm text-gray-500'>Destination</h2>
                     <p className='font-semibold text-gray-600'>{selectTourLocation ? `${selectTourLocation.length > 35 ? `${selectTourLocation.slice(0, 35)} . . . .` : selectTourLocation}` : 'Select your dectination'}</p>
                   </div>
                 </div>
 
 
-                {showTourSearchBar ? <div ref={tourLocationListRef} className='w-full lg:w-full h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
+                {showTourSearchBar ? <div ref={tourLocationListRef} className='w-full lg:w-full max-h-96 absolute top-[70px] z-10 p-2 bg-white shadow-primaryShadow rounded-lg '>
                   <div className='w-full h-10  flex items-center relative border-b border-gray-400'>
                     <SearchIcon className='absolute text-gray-500' />
                     <input
                       onClick={(e) => e.stopPropagation()}
                       onChange={(e) => { setSearchLocation(e.target.value); }}
                       defaultValue={selectTourLocation}
-                      className='w-full h-full text-xs pl-4 outline-none' type="text" placeholder='Type to search' />
+                      className='w-full h-full text-sm pl-4 outline-none bg-white' type="text" placeholder='Type to search' />
                   </div>
 
-                  <div className='w-full h-80 overflow-scroll mt-1'>
-                    {filterLocation.map(location => <p
-                      onClick={() => { setSelectTourLocation(location.title) }}
+                  <div className='w-full max-h-80 overflow-scroll mt-1'>
+                    {filterLocation?.map(location => <p
+                      onClick={() => { setSelectTourLocation(location.name) }}
                       key={location.id}
-                      className='text-xs p-2 rounded-lg hover:bg-[#E4E9F1] flex items-center gap-2'><LocationIcon className='text-gray-500' /> {location.title}</p>)}
+                      className='text-sm p-2 rounded-lg hover:bg-[#E4E9F1] flex items-center gap-2'><LocationIcon className='text-gray-500' /> {location.name}</p>)}
                   </div>
                 </div> : ''}
               </div>
@@ -389,7 +392,7 @@ const handleHotelSearch = (e) => {
 
             <div className='flex items-center justify-center'>
               <button onClick={handleTourSearch}
-                className='bg-primaryColor text-white text-xs font-medium p-2 rounded-lg px-4 mb-2'
+                className='bg-primaryColor text-white text-sm font-medium p-2 rounded-lg px-4 mb-2'
               >Search </button>
             </div>
           </section>

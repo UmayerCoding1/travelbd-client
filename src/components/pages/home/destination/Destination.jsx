@@ -14,7 +14,7 @@ const Destination = () => {
               <h2 className='text-3xl lg:text-5xl text-center '><span className='font-bold'>Let’s Explore</span> Your Dream  <br />
               Destination Here!
               </h2>
-              <p className='text-xs text-center '>We have recommended every week so you don’t have to worry about your dream destination  with travel</p>
+              <p className='text-sm text-center '>We have recommended every week so you don’t have to worry about your dream destination  with travel</p>
             </div>
 
              {/* <div></div> */}

@@ -35,7 +35,7 @@ const DateRangeCalender = ({setSendData, SetAction,visible,btnText}) => {
                 e.stopPropagation();
                 SetAction(false)
                 setSendData(tempSelection[0])}}
-            className={`w-full h-10 text-xs rounded-lg font-semibold mt-5  ${state[0].endDate ? 'bg-orange-500 text-white' : "bg-gray-300 cursor-not-allowed text-gray-500"}`} >{btnText ? btnText :"Reserve"}</button>
+            className={`w-full h-10 text-sm rounded-lg font-semibold mt-5  ${state[0].endDate ? 'bg-orange-500 text-white' : "bg-gray-300 cursor-not-allowed text-gray-500"}`} >{btnText ? btnText :"Reserve"}</button>
         </div>
     );
 };

@@ -12,7 +12,7 @@ const Root = () => {
     
     
     return (
-        <div >
+        <div className='bg-white text-black'>
            {skeletonLoading ? <ReloadAnimation/> 
             : 
             <>

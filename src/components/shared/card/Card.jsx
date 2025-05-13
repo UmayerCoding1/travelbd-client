@@ -23,17 +23,17 @@ const Card = ({ please }) => {
                ) : title}
             </h2>
 
-            <button className="flex items-center gap-1 text-xs absolute top-5 z-10 right-7 text-white glass">
+            <button className="flex items-center gap-1 text-sm absolute top-5 z-10 right-7 text-white glass">
                <LocationIcon className="text-orange-500" /> {location}
             </button>
 
             <div className="mt-auto bg-gray-100 p-2 lg:flex items-center justify-between">
                <p className="text-sm font-medium flex items-center">
                   <span className="text-orange-500">৳{Price}</span>
-                  <span className="text-xs">_per person</span>
+                  <span className="text-sm">_per person</span>
                </p>
                <Link to={`/destination/${_id}`}>
-                  <button className="w-full lg:w-20 h-8 mt-2 lg:mt-0 rounded-lg text-xs bg-primaryBgColor text-white hover:border-none duration-300 ease-in">
+                  <button className="w-full lg:w-20 h-8 mt-2 lg:mt-0 rounded-lg text-sm bg-primaryBgColor text-white hover:border-none duration-300 ease-in">
                      View
                   </button>
                </Link>
